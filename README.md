@@ -1,2 +1,0 @@
-# aloysius-lip
-Personal website
