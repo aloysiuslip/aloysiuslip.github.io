@@ -4,9 +4,12 @@ html,body {
 	user-select: none;
 	height: 100%;
 	width: 100%;
-	overflow: hidden;
 	color: black;
 	font-family: Berlin Sans, Futura (Light), futura-lt-w01-light, 'Gill Sans MT', sans-serif;
+}
+
+body {	
+	overflow-y: scroll;
 }
 
 a {
@@ -19,12 +22,16 @@ a {
 
 .container div {
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 	text-align: center;
 	margin: 0 auto;
+}
+
+.container .title, .container .navigation, .container .footer {
+	flex-direction: row;
 }
 
 .title {	
@@ -35,7 +42,8 @@ a {
 	padding: 0px 20px;
 }
 
-.footer {
+.signature {
+	padding: 20px;
 	flex-direction: column !important;
 }
 
@@ -44,8 +52,16 @@ a {
 	flex-direction: column !important;
 }
 
+.social div {
+	flex-direction: row;
+}
+
 .social a img {
 	padding: 0 10px;
 	height: 40px;
 	width: auto;
+}
+
+.social a img:hover {
+	filter: opacity(75%) sepia(100%) saturate(500%) brightness(70%) hue-rotate(180deg);
 }
