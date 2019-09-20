@@ -1,0 +1,51 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	color: black;
+	font-family: Berlin Sans, Futura (Light), futura-lt-w01-light, 'Gill Sans MT', sans-serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+	text-decoration-color: inherit;
+}
+
+/*OBJECTS*/
+
+.container div {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	text-align: center;
+	margin: 0 auto;
+}
+
+.title {	
+	width: 39.1vw;
+}
+
+.navigation a {
+	padding: 0px 20px;
+}
+
+.footer {
+	flex-direction: column !important;
+}
+
+.social {
+	padding: 20px;
+	flex-direction: column !important;
+}
+
+.social a img {
+	padding: 0 10px;
+	height: 40px;
+	width: auto;
+}
