@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/aloysius-lip/static/css/main.32888015.chunk.css",
-    "main.js": "/aloysius-lip/static/js/main.70630f34.chunk.js",
-    "main.js.map": "/aloysius-lip/static/js/main.70630f34.chunk.js.map",
+    "main.js": "/aloysius-lip/static/js/main.860842b3.chunk.js",
+    "main.js.map": "/aloysius-lip/static/js/main.860842b3.chunk.js.map",
     "runtime~main.js": "/aloysius-lip/static/js/runtime~main.c41d73ae.js",
     "runtime~main.js.map": "/aloysius-lip/static/js/runtime~main.c41d73ae.js.map",
     "static/css/2.3c1ddb0a.chunk.css": "/aloysius-lip/static/css/2.3c1ddb0a.chunk.css",
     "static/js/2.052571ed.chunk.js": "/aloysius-lip/static/js/2.052571ed.chunk.js",
     "static/js/2.052571ed.chunk.js.map": "/aloysius-lip/static/js/2.052571ed.chunk.js.map",
     "index.html": "/aloysius-lip/index.html",
-    "precache-manifest.967c3d62310524123315ad2e758fc9a6.js": "/aloysius-lip/precache-manifest.967c3d62310524123315ad2e758fc9a6.js",
+    "precache-manifest.d49519b1a7173139713afcf35577f2a8.js": "/aloysius-lip/precache-manifest.d49519b1a7173139713afcf35577f2a8.js",
     "service-worker.js": "/aloysius-lip/service-worker.js",
     "static/css/2.3c1ddb0a.chunk.css.map": "/aloysius-lip/static/css/2.3c1ddb0a.chunk.css.map",
     "static/css/main.32888015.chunk.css.map": "/aloysius-lip/static/css/main.32888015.chunk.css.map",
