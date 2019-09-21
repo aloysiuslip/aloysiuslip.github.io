@@ -9,15 +9,14 @@ import About from './pages/About';
 export default class App extends React.Component {
 
 	render() {
-		console.log(process.env.PUBLIC_URL);
 		return (
 			<Router basename={process.env.PUBLIC_URL}>
 				<div>
-					<Route path={(process.env.PUBLIC_URL || '') + '/'} exact component={Home} />
-					<Route path={(process.env.PUBLIC_URL || '') + '/projects'} exact component={Home} />
-					<Route path={(process.env.PUBLIC_URL || '') + '/portfolio'} exact component={Portfolio} />
-					<Route path={(process.env.PUBLIC_URL || '') + '/about'} exact component={About} />
-					<Route path={(process.env.PUBLIC_URL || '') + '/home'} exact component={() => <Redirect to='/' />} />
+					<Route path='/' exact component={Home} />
+					<Route path='/projects' exact component={Home} />
+					<Route path='/portfolio' exact component={Portfolio} />
+					<Route path='/about' exact component={About} />
+					<Route path='/home' exact component={() => <Redirect to='/' />} />
 				</div>
 			</Router>
 		);
