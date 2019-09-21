@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d44938583e55f02315822fab5f7f175a",
+    "revision": "5bb0c332b2df90a9a22aa04334d6951c",
     "url": "/aloysius-lip/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/aloysius-lip/static/css/2.3c1ddb0a.chunk.css"
   },
   {
-    "revision": "21656d355b9715a33921",
+    "revision": "73d70a375256f0dc9637",
     "url": "/aloysius-lip/static/css/main.32888015.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/aloysius-lip/static/js/2.052571ed.chunk.js"
   },
   {
-    "revision": "21656d355b9715a33921",
-    "url": "/aloysius-lip/static/js/main.860842b3.chunk.js"
+    "revision": "73d70a375256f0dc9637",
+    "url": "/aloysius-lip/static/js/main.f74f1ab2.chunk.js"
   },
   {
     "revision": "c4d6ddd96cd0cdc519bc",
