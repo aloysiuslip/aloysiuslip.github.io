@@ -9,8 +9,9 @@ import About from './pages/About';
 export default class App extends React.Component {
 
 	render() {
+		console.log(process.env.PUBLIC_URL);
 		return (
-			<Router>
+			<Router basename={process.env.PUBLIC_URL}>
 				<div>
 					<Route path={(process.env.PUBLIC_URL || '') + '/'} exact component={Home} />
 					<Route path={(process.env.PUBLIC_URL || '') + '/projects'} exact component={Home} />
