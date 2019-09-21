@@ -12,11 +12,11 @@ export default class App extends React.Component {
 		return (
 			<Router>
 				<div>
-					<Route path='/' exact component={Home} />
-					<Route path='/projects' exact component={Home} />
-					<Route path='/portfolio' exact component={Portfolio} />
-					<Route path='/about' exact component={About} />
-					<Route path='/home' exact component={() => <Redirect to='/' />} />
+					<Route path={(process.env.PUBLIC_url || '') + '/'} exact component={Home} />
+					<Route path={(process.env.PUBLIC_url || '') + '/projects'} exact component={Home} />
+					<Route path={(process.env.PUBLIC_url || '') + '/portfolio'} exact component={Portfolio} />
+					<Route path={(process.env.PUBLIC_url || '') + '/about'} exact component={About} />
+					<Route path={(process.env.PUBLIC_url || '') + '/home'} exact component={() => <Redirect to='/' />} />
 				</div>
 			</Router>
 		);
