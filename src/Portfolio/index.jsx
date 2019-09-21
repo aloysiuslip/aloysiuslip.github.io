@@ -56,7 +56,7 @@ class Dynamic extends React.Component {
 				<img alt={name.toLowerCase()
 					.replace(/\s+/g, '_')
 					.replace('.jpg', '')
-				} src={path.join('/', 'gallery', id, i.toString(), name)}></img>
+				} src={path.join(process.env.PUBLIC_URL, 'gallery', id, i.toString(), name)}></img>
 			</div>
 		});
 	}
