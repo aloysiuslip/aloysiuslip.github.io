@@ -2,10 +2,10 @@ import React, { useState, useCallback } from "react";
 import Gallery from "react-photo-gallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 
-export function buildGrid(paths, i, id, ratios = []) {
+export function buildGrid(paths, i, id, {ratio, ratios = []}) {
 	let arr = paths.map((name, j) => {
 		let uri = [window.location.origin + process.env.PUBLIC_URL, 'gallery', id, i.toString(), name].join('/');
-		if (!ratios[j]) ratios[j] = [1, 1];
+		if (!ratios[j]) ratios[j] = ratio || [1, 1];
 		return {
 			key: id + '.' + i.toString() + '.' + j.toString(),
 			alt: name.toLowerCase().replace(/\s+/g, '_').replace('.jpg', ''),
@@ -40,6 +40,7 @@ function App(props) {
 		<div
 			className="Grid"			
 			key={props.id + '.' + props.i.toString() + '.Grid' + Math.random().toString(32).slice(2)}
+			style={props.style}
 		>
 			<Gallery
 				{...props}

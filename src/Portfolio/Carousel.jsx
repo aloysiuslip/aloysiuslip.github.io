@@ -34,6 +34,8 @@ function App(props) {
 	return (
 		<div		
 			key={props.id + '.' + props.i.toString() + '.Carousel' + Math.random().toString(32).slice(2)}
+			className='Carousel'
+			style={props.style}
 		>
 			<Gallery
 				{...props}

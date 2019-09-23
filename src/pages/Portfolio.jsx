@@ -16,6 +16,11 @@ export default class Portfolio extends React.Component {
 			<div className="container">
 				<Title />
 				<Navigation />
+				<div className="intro">
+					<h3>
+						Below is a collection of artwork I've produced for various events throughout my time at school and university. It is not a complete set, since I tend to employ graphic design techniques for almost every project and presentation I undertake. Instead it is a sequence of 'collections'. My program of choice has been the GNU Image Manipulation Program (GIMP).
+					</h3>
+				</div>
 				<div className="feed">
 					{config.map(p => {
 						return (

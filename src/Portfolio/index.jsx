@@ -27,7 +27,7 @@ export default class Dynamic extends React.Component {
 	}
 
 	getGrid(gallery, i, id) {
-		let children = buildGrid(gallery.paths, i, id, gallery.ratios);
+		let children = buildGrid(gallery.paths, i, id, gallery);
 		return (
 			<Grid
 				key={id + '.' + i.toString() + '.Grid'}
@@ -35,10 +35,12 @@ export default class Dynamic extends React.Component {
 				id={id}
 				photos={children}
 				margin={gallery.margin || 2}
-				rowHeight={gallery.rowHeight || 180}
 				enableLightbox={gallery.enableLightbox !== false}
 				columns={3}
-				targetRowHeight={gallery.targetRowHeight || undefined}
+				targetRowHeight={gallery.height || 200}
+				style={{
+					maxWidth: gallery.maxWidth !== undefined ? gallery.maxWidth : '800px'
+				}}
 			/>
 		);
 	}
@@ -47,7 +49,6 @@ export default class Dynamic extends React.Component {
 		let data = buildCarousel(gallery.paths, i, id);
 		return (
 			<Carousel
-				className='Carousel'
 				key={id + '.' + i.toString() + '.Carousel'}
 				i={i}
 				id={id}
@@ -65,15 +66,18 @@ export default class Dynamic extends React.Component {
 				centerMode={gallery.centerMode || false}
 				dynamicHeight={gallery.dynamicHeight || false}
 				photos={data}
+				style={{
+					maxWidth: gallery.maxWidth !== undefined ? gallery.maxWidth : '1200px'
+				}}
 			>
 				{data.map(props => {
 					return (
 						<div key={id + '.' + i.toString()}>
-						<img
-							{...props}
-							alt={props.alt}
-						></img>
-					</div>
+							<img
+								{...props}
+								alt={props.alt}
+							></img>
+						</div>
 					)
 				})}
 			</Carousel>

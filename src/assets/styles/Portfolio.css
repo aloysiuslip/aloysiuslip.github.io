@@ -1,8 +1,7 @@
 
 .feed {
-	padding: 0 15vw;
-	width: 70vw;
-	max-width: 70vw;
+	width: 61.8vw;
+	max-width: 61.8vw;
 }
 
 .post {
@@ -14,17 +13,12 @@
 	align-items: center !important;
 	justify-content: center !important;
 	padding: 20px 0 0 0;
-	width: 70vw !important;
-}
-
-.DisplayImage img {
-	width: 100%;
+	width: 61.8vw !important;
 }
 
 .Grid {
 	padding: 20px 0 0 0;
-	width: 70vw !important;
-	max-width: 800px;
+	width: 61.8vw !important;
 }
 
 .Carousel {
@@ -32,7 +26,27 @@
 	justify-content: center !important;
 	padding: 20px 0 0 0;
 	width: 60vw !important;
-	max-width: 1200px;
+}
+
+.DisplayImage img {
+	max-width: 100%;
+}
+
+.DisplayImage img:hover {
+	cursor: pointer;
+}
+
+.Carousel div {
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.Carousel div:hover {
+	cursor: pointer !important;
+}
+
+.Grid img:hover {
+	opacity: 0.8;
 }
 
 .thumbs-wrapper {
