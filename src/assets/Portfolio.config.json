@@ -1,23 +1,104 @@
 [
 	{
+		"date": "May 2017",
+		"id": "7.oucc",
 		"title": "'The many pieces in play'",
-		"subtitle": "OXFORD UNIVERSITY CHESS CLUB (OUCC) - MAY 2017",
+		"subtitle": "OXFORD UNIVERSITY CHESS CLUB (OUCC) - MAY 2019",
 		"body": "In the Trinity Term of 2019, I was elected Treasurer of the university's longstanding Chess Club. The series below shows my work. The club has weekly chess nights; to publicise and attract interest, I created for each a unique image, themed to the club night itself. The techniques prioritise time efficiency of creation as well as aeshetic, but some unique examples of tiltshift, motion blur, perspective shadows, and 3D-perspectives can be seen."
 	},
 	{
+		"date": "January 2017",
+		"id": "6.oums",
 		"title": "'An exercise in Homely design'",
-		"description": "OXFORD UNIVERSITY MIDLANDS Society - January 2017",
-		"body": "The community of Oxford University undergraduates decided to coalesce this year to form a society. Seeking out a cover and profile picture design for their Facebook page, I agreed to help them out, producing the following set of images. The latter was extremely enjoyable to produce as it features a large number of 'Midlands jokes' - famous people or objects from the Midlands. Source Image: https://i.imgur.com/m7zfuozg.jpg"
+		"subtitle": "OXFORD UNIVERSITY MIDLANDS Society - January 2019",
+		"body": "The community of Oxford University undergraduates decided to coalesce this year to form a society. Seeking out a cover and profile picture design for their Facebook page, I agreed to help them out, producing the following set of images. The latter was extremely enjoyable to produce as it features a large number of 'Midlands jokes' - famous people or objects from the Midlands. Source Image: https://i.imgur.com/m7zfuozg.jpg",
+		"galleries": [
+			{
+				"type": "image",
+				"path": "midland society.jpg",
+				"width": "80%",
+				"maxWidth": "1600px",
+				"border": "10px double",
+				"outline": "20px solid #ffffff"
+			},			
+			{
+				"type": "image",
+				"path": "profile.jpg",
+				"width": "49.44%",
+				"maxWidth": "1200px",
+				"border": "10px double",
+				"outline": "20px solid #ffffff"
+			}
+		]
 	},
 	{
+		"date": "July 2018",
+		"id": "5.syndicate",
 		"title": "'Midsummer Nights' Disco'",
 		"subtitle": "Syndicate Production - July 2018",
-		"body": "The Syndicate Production is an annual Sixth-Form play performed after final exams. With no acting desires but a wish to contribute, I aided the performing group's logistics, rehearsals, and design. Of the latter, I produced a programme to match the play's theme: 'A Midsummer Nights' Dream', but set in an 80's disco. The designed used several depth techniques and experimented with the 'interconnected-ness' nature of a programme design - several elements run across page folds."
+		"body": "The Syndicate Production is an annual Sixth-Form play performed after final exams. With no acting desires but a wish to contribute, I aided the performing group's logistics, rehearsals, and design. Of the latter, I produced a programme to match the play's theme: 'A Midsummer Nights' Dream', but set in an 80's disco. The designed used several depth techniques and experimented with the 'interconnected-ness' nature of a programme design - several elements run across page folds.",
+		"galleries": [
+			{
+				"type": "image",
+				"path": "SyndicateProduction.jpg",
+				"width": "100%",
+				"maxWidth": "2000px"
+			}
+		]
 	},
 	{
+		"date": "June 2017",
+		"id": "4.ukip",
 		"title": "'SATIRE'",
 		"subtitle": "The UKIP mock election campaign team - June 2017",
-		"body": "To coincide with the 2017 snap election, the school held an internal 'mock election' in which students could represent parties and campaign for their fellows' votes. In the humour of the season, I led the UKIP mock election campaign. In a test of graphic design capability and an homage to the history department, the first series of posters designed took propaganda used by the Nazi party, the originals (left) dating from 1930s Germany and employed subtle modifications. The second series feature a more sombre set of infoslides, as one might typically see on an official party social media account, to stretch my abilities in formal/official design. The posters make reference to a now-inactive @kesukip Instagram account that I ran for the duration of the campaign."
+		"body": "To coincide with the 2017 snap election, the school held an internal 'mock election' in which students could represent parties and campaign for their fellows' votes. In the humour of the season, I led the UKIP mock election campaign. In a test of graphic design capability and an homage to the history department, the first series of posters designed took propaganda used by the Nazi party, the originals (left) dating from 1930s Germany and employed subtle modifications. The second series feature a more sombre set of infoslides, as one might typically see on an official party social media account, to stretch my abilities in formal/official design. The posters make reference to a now-inactive @kesukip Instagram account that I ran for the duration of the campaign.",
+		"galleries": [
+			{
+				"type": "carousel",
+				"width": "100%",
+				"axis": "vertical",
+				"showThumbs": false,
+				"paths": [
+					"youth.jpg",
+					"politicians.jpg",
+					"negotiations.jpg",
+					"deustcheland.jpg"
+				]
+			},
+			{
+				"type": "carousel",
+				"width": "80%",
+				"showThumbs": false,
+				"paths": [
+					"purple revolution.jpg",
+					"revolution red.jpg",
+					"revolution white.jpg",
+					"revolution blue.JPG"
+				]
+			}
+		]
+	},
+	{
+		"date": "March 2017",
+		"id": "3.blumine",
+		"title": "'BLUMINE'",
+		"subtitle": "Spring Choral & Orchestral Concert - March 2017",
+		"body": "I was commissioned by the King Edward's School music department to produce a programme cover for the upcoming Spring Choral & Orchestral concert, respectively entitled 'Angel', 'Victory', and 'Score'. 'Victory' marks my first 'digital painting', having designed and coloured every aspect rather than merely compiling and editing existing illustrations.",
+		"galleries": [
+			{
+				"type": "carousel",
+				"width": "80%",
+				"dynamicHeight": true,
+				"autoPlay": false,
+				"paths": [
+					"AL Angel.jpg",
+					"AL Angel Vertical3.jpg",
+					"AL Victory Horizontal.jpg",
+					"AL Victory Vertical 2.jpg",
+					"SB Violin.jpg"
+				]
+			}
+		]
 	},
 	{
 		"date": "January 2017",
@@ -31,7 +112,31 @@
 		"id": "1.leadership",
 		"title": "'A Leader in Design'",
 		"subtitle": "KES Leadership - September 2016",
-		"body": "In my sixth year of school, I was awarded the position 'Head of Leadership', a student-run programme on Friday afternoons replacing lessons that taught teamworking, creativity, and problem-solving. For my tenure, I was determined to ensure that the qualifier 'student-run' did not mean a drop in quality compared to professional educators. I therefore made sure that all members of my teams (3 sets of 5) prepared weekly activities of quality and employed full effort at all times. Part of this meant that all work I presented or displayed used top quality designs. Here are a few selections from those which I produced."
+		"body": "In my sixth year of school, I was awarded the position 'Head of Leadership', a student-run programme on Friday afternoons replacing lessons that taught teamworking, creativity, and problem-solving. For my tenure, I was determined to ensure that the qualifier 'student-run' did not mean a drop in quality compared to professional educators. I therefore made sure that all members of my teams (3 sets of 5) prepared weekly activities of quality and employed full effort at all times. Part of this meant that all work I presented or displayed used top quality designs. Here are a few selections from those which I produced.",
+		"galleries": [
+			{
+				"type": "grid",
+				"rowHeight": 80,
+				"paths": [
+					"Lego Square2.jpg",
+					"Emblem.jpg",
+					"Luigi.jpg",
+					"Flag2.jpg",
+					"Fancy An. Exhibition.jpg",
+					"School Years.jpg",
+					"Leadership XP 2016.jpg"
+				],
+				"ratios": [
+					[2, 2],
+					[2, 2],
+					[2, 2],
+					[1.5, 1],
+					[2, 1],
+					[2, 1],
+					[2, 1]
+				]
+			}
+		]
 	},
 	{
 		"date": "July 2015",
@@ -41,7 +146,7 @@
 		"body": "Series 1: As the new and enthusiastic leader of the school's historic Junior Debating Society, I produced a large series of poster promoting the new term. The design satirised the government's wildly criticised 'GREAT' campaign from 2011, dressing up images taken around the school or public commons and redesigned for the purposes of advertising . A2 versions of these posters were distributed around the school, successfully attracting an average attendance of 45, the highest ever seen by the society and bringing the society to the at-the-time most attended in the school. Vertical versions of every poster were also produced (not included here).\nSeries 2: Weekly B&W posters were also produced under the constraints of cost of printer ink and published every week without fail. A point of interest is that, especially in early designs, one can observe my level of progression in seeing what worked with these posters, but this quickly settled and reached a level of consistency.",
 		"galleries": [
 			{
-				"type": "carousel",
+				"type": "Carousel",
 				"width": "80%",
 				"paths": [
 					"Debating is Great.jpg",

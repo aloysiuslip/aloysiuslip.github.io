@@ -1,6 +1,8 @@
+
 .feed {
 	padding: 0 15vw;
 	width: 70vw;
+	max-width: 70vw;
 }
 
 .post {
@@ -8,17 +10,37 @@
 	white-space: pre-wrap;
 }
 
+.DisplayImage {
+	align-items: center !important;
+	justify-content: center !important;
+	padding: 20px 0 0 0;
+	width: 70vw !important;
+}
+
+.DisplayImage img {
+	width: 100%;
+}
+
+.Grid {
+	padding: 20px 0 0 0;
+	width: 70vw !important;
+	max-width: 800px;
+}
+
 .Carousel {
 	align-items: center !important;
 	justify-content: center !important;
 	padding: 20px 0 0 0;
 	width: 60vw !important;
+	max-width: 1200px;
 }
 
 .thumbs-wrapper {
 	width: 100% !important;
-	overflow-x: scroll !important;
+	overflow-x: auto !important;
 	margin: 0 !important;
+	align-items: center !important;
+	justify-content: center !important;
 }
 
 .thumbs.animated {
@@ -26,7 +48,7 @@
 }
 
 .feed div {
-	text-align: left;
+	text-align: justify;
 	justify-content: flex-start;
 	align-items: flex-start;
 }

@@ -1,73 +1,101 @@
 import React from 'react';
-import { Carousel } from "react-responsive-carousel";
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import path from 'path';
+import Grid, {buildGrid} from './Grid';
+import Carousel, {buildCarousel} from './Carousel';
 
-import config from '../assets/Portfolio.config.json';
+export default class Dynamic extends React.Component {
 
-let arr = [];
-
-class Dynamic extends React.Component {
-
-	constructor(props) {
-		super(props);
-		/*eslint-disable-next-line no-unused-vars*/
-		for (let k of Object.getOwnPropertyNames(props)) {
-			this[k] = props[k];
+	static toProperCase(str) {
+		let words = str.split(/ +/g);
+		let newArray = [];
+		for (let i = 0; i < words.length; i++) {
+			newArray[i] = words[i][0].toUpperCase() + words[i].slice(1, words[i].length).toLowerCase();
 		}
-		this.getCarousel = this.getCarousel.bind(this);
-		if (!this.galleries) this.galleries = [];
+		let newString = newArray.join(' ');
+		return newString;
 	}
-	
-	render() {
-		let element = (
-			<div className="post" key={this.id}>
-				<h1>{this.title}</h1>
-				<h2>{this.subtitle}</h2>
-				{this.body}
-				{this.galleries.map((gallery, i) => this.getCarousel(gallery, i, this.id))}
+
+	getImage(gallery, i, id) {
+		return (
+			<div
+				className="DisplayImage"			
+				key={id + '.' + i.toString() + '.Image'}
+			>
+				<img 
+					alt={gallery.path.toLowerCase().replace(/\s+/g, '_').replace('.jpg', '')}
+					src={path.join(process.env.PUBLIC_URL, 'gallery', id, i.toString(), gallery.path)}
+					style={Object.assign({}, gallery, {
+						type: undefined,
+						path: undefined
+					})}
+				></img>
 			</div>
+		)
+	}
+
+	getGrid(gallery, i, id) {
+		let children = buildGrid(gallery.paths, i, id, gallery.ratios);
+		let element = (
+			<Grid
+				key={id + '.' + i.toString() + '.Grid'}
+				i={i}
+				id={id}
+				photos={children}
+				margin={gallery.margin || 2}
+				rowHeight={gallery.rowHeight || 180}
+				enableLightbox={gallery.enableLightbox !== false}
+				columns={3}
+			/>
 		);
 		return element;
 	}
 
 	getCarousel(gallery, i, id) {
-		if (gallery.type !== 'carousel') return null;
-		let children = this.buildCarousel(gallery.paths, i, id);
-		return <Carousel className="Carousel"
-			id={id + '.' + i.toString() + '.Carousel'}
-			autoPlay
-			width={gallery.width || "100%"}
-			infiniteLoop
-			showStatus={false}
-			showThumbs={gallery.showThumbs !== false}
-			interval={4000}
-			transitionTime={500}
-			useKeyboardArrows
-			centerMode={gallery.centerMode || false}
-		>
-			{children}
-		</Carousel>;
+		let children = buildCarousel(gallery.paths, i, id);
+		return (
+			<Carousel
+				className="Carousel"
+				key={id + '.' + i.toString() + '.Carousel'}
+				i={i}
+				id={id}
+				infiniteLoop={true}
+				useKeyboardArrows={true}
+				showStatus={false}
+				emulateTouch={true}
+				axis={gallery.axis || "horizontal"}
+				autoPlay={gallery.autoPlay !== false}
+				width={gallery.width || "100%"}
+				selectedItem={gallery.selectItem || 0}
+				showThumbs={gallery.showThumbs !== false}
+				interval={gallery.interval || 4000}
+				transitionTime={gallery.transitionTime || 500}
+				centerMode={gallery.centerMode || false}
+				dynamicHeight={gallery.dynamicHeight || false}
+			>
+				{children}
+			</Carousel>
+		);
 	}
 
-	buildCarousel(paths, i, id) {
-		return paths.map(name => {
-			return <div key={id + '.' + i.toString()}>
-				<img alt={name.toLowerCase()
-					.replace(/\s+/g, '_')
-					.replace('.jpg', '')
-				} src={path.join(process.env.PUBLIC_URL, 'gallery', id, i.toString(), name)}></img>
+	render() {
+		let element = (
+			<div className="post" key={this.props.id}>
+				<h1>{this.props.title}</h1>
+				<h2>{this.props.subtitle}</h2>
+				{this.props.body}
+				{(this.props.galleries || []).map((gallery, i) => {
+					try {
+						if (!gallery.type) throw new Error('No type specified for gallery ' + gallery.id);
+						let func = 'get' + Dynamic.toProperCase(gallery.type);
+						return this[func](gallery, i, this.props.id);
+					} catch (e) {
+						if (e) console.error(e);
+						return null;
+					}
+				})}
 			</div>
-		});
+		);
+		return element;
 	}
 
 }
-
-/*eslint-disable-next-line no-unused-vars*/
-for (let post of config.sort((a, b) => new Date(b.date) - new Date(a.date))) {
-	let Constructor = new Dynamic(post);
-	let element = Constructor.render();
-	arr.push(element);
-}
-
-export default arr;

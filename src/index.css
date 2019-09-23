@@ -1,0 +1,11 @@
+@import url(//db.onlinewebfonts.com/c/06190fb370e952fa10fad4dd11876d63?family=Futura+BQ);
+
+@font-face {
+	font-family: "Futura BQ";
+	src: url("//db.onlinewebfonts.com/t/06190fb370e952fa10fad4dd11876d63.eot");
+	src: url("//db.onlinewebfonts.com/t/06190fb370e952fa10fad4dd11876d63.eot?#iefix") format("embedded-opentype"),
+	url("//db.onlinewebfonts.com/t/06190fb370e952fa10fad4dd11876d63.woff2") format("woff2"),
+	url("//db.onlinewebfonts.com/t/06190fb370e952fa10fad4dd11876d63.woff") format("woff"),
+	url("//db.onlinewebfonts.com/t/06190fb370e952fa10fad4dd11876d63.ttf") format("truetype"),
+	url("//db.onlinewebfonts.com/t/06190fb370e952fa10fad4dd11876d63.svg#Futura BQ") format("svg");
+}

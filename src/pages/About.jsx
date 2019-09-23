@@ -17,7 +17,7 @@ export default class Home extends React.Component {
 					<div className={styles.image}>
 						<img src={Send} alt="Write to Aloysius Lip"></img>
 					</div>
-					<div className="form">
+					<div className={styles.about}>
 						<h5>
 							<a href="mailto://aloysius.lip@gmail.com" rel="noopener noreferrer" target="_blank">
 								aloysius.lip@gmail.com
@@ -30,6 +30,8 @@ export default class Home extends React.Component {
 								Oxford<br />
 								OX1 1DP<br />
 							</a>
+							<br />
+							All images and work licensed and used with permission. If you wish to raise a complaint about any of the content hosted here, please contact the above email.
 						</h5>
 					</div>
 				</div>
