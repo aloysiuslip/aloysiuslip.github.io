@@ -1,5 +1,6 @@
 import React from 'react';
-import path from 'path';
+
+import Image, {buildImage} from './Image';
 import Grid, {buildGrid} from './Grid';
 import Carousel, {buildCarousel} from './Carousel';
 
@@ -17,25 +18,17 @@ export default class Dynamic extends React.Component {
 
 	getImage(gallery, i, id) {
 		return (
-			<div
-				className="DisplayImage"			
-				key={id + '.' + i.toString() + '.Image'}
-			>
-				<img 
-					alt={gallery.path.toLowerCase().replace(/\s+/g, '_').replace('.jpg', '')}
-					src={path.join(process.env.PUBLIC_URL, 'gallery', id, i.toString(), gallery.path)}
-					style={Object.assign({}, gallery, {
-						type: undefined,
-						path: undefined
-					})}
-				></img>
-			</div>
+			<Image
+				{...buildImage(gallery, i, id)}
+				i={i}
+				id={id}
+			/>
 		)
 	}
 
 	getGrid(gallery, i, id) {
 		let children = buildGrid(gallery.paths, i, id, gallery.ratios);
-		let element = (
+		return (
 			<Grid
 				key={id + '.' + i.toString() + '.Grid'}
 				i={i}
@@ -45,16 +38,16 @@ export default class Dynamic extends React.Component {
 				rowHeight={gallery.rowHeight || 180}
 				enableLightbox={gallery.enableLightbox !== false}
 				columns={3}
+				targetRowHeight={gallery.targetRowHeight || undefined}
 			/>
 		);
-		return element;
 	}
 
 	getCarousel(gallery, i, id) {
-		let children = buildCarousel(gallery.paths, i, id);
+		let data = buildCarousel(gallery.paths, i, id);
 		return (
 			<Carousel
-				className="Carousel"
+				className='Carousel'
 				key={id + '.' + i.toString() + '.Carousel'}
 				i={i}
 				id={id}
@@ -62,24 +55,34 @@ export default class Dynamic extends React.Component {
 				useKeyboardArrows={true}
 				showStatus={false}
 				emulateTouch={true}
-				axis={gallery.axis || "horizontal"}
+				axis={gallery.axis || 'horizontal'}
 				autoPlay={gallery.autoPlay !== false}
-				width={gallery.width || "100%"}
+				width={gallery.width || '100%'}
 				selectedItem={gallery.selectItem || 0}
 				showThumbs={gallery.showThumbs !== false}
 				interval={gallery.interval || 4000}
 				transitionTime={gallery.transitionTime || 500}
 				centerMode={gallery.centerMode || false}
 				dynamicHeight={gallery.dynamicHeight || false}
+				photos={data}
 			>
-				{children}
+				{data.map(props => {
+					return (
+						<div key={id + '.' + i.toString()}>
+						<img
+							{...props}
+							alt={props.alt}
+						></img>
+					</div>
+					)
+				})}
 			</Carousel>
 		);
 	}
 
 	render() {
 		let element = (
-			<div className="post" key={this.props.id}>
+			<div className='post' key={this.props.id}>
 				<h1>{this.props.title}</h1>
 				<h2>{this.props.subtitle}</h2>
 				{this.props.body}

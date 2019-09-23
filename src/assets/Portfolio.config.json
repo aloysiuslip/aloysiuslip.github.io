@@ -116,7 +116,7 @@
 		"galleries": [
 			{
 				"type": "grid",
-				"rowHeight": 80,
+				"targetRowHeight": 200,
 				"paths": [
 					"Lego Square2.jpg",
 					"Emblem.jpg",

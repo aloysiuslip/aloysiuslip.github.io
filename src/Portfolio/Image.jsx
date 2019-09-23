@@ -1,21 +1,20 @@
 import React, { useState, useCallback } from "react";
-import path from 'path';
-import { Carousel as Gallery } from "react-responsive-carousel";
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import Carousel, { Modal, ModalGateway } from "react-images";
+import path from 'path';
 
-export function buildCarousel(paths, i, id) {
-	return paths.map((name, j) => {
-		return {
-			key: id + '.' + i.toString() + '.' + j.toString(),
-			alt: name.toLowerCase().replace(/\s+/g, '_').replace('.jpg', ''),
-			index: j,
-			src: path.join(process.env.PUBLIC_URL, 'gallery', id, i.toString(), name),
-			caption: name.toLowerCase()
-				.replace(/\s+/g, '_')
-				.replace('.jpg', '')
-		}
-	});
+export function buildImage(gallery, i, id) {
+	return {
+		key: id + '.' + i.toString() + '.Image',
+		i,
+		id,
+		alt: gallery.path.toLowerCase().replace(/\s+/g, '_').replace('.jpg', ''),
+		src: path.join(process.env.PUBLIC_URL, 'gallery', id, i.toString(), gallery.path),
+		style: Object.assign({}, gallery, {
+			type: undefined,
+			path: undefined
+		}),
+		index: 0
+	}
 }
 
 function App(props) {
@@ -32,12 +31,14 @@ function App(props) {
 		setViewerIsOpen(false);
 	};
 	return (
-		<div		
-			key={props.id + '.' + props.i.toString() + '.Carousel' + Math.random().toString(32).slice(2)}
+		<div
+			className="DisplayImage"			
+			key={props.id + '.' + props.i.toString() + '.Image' + Math.random().toString(32).slice(2)}
 		>
-			<Gallery
+			<img
 				{...props}
-				onClickItem={props.enableLightbox !== false ? openLightbox : () => {}}
+				alt={props.alt}
+				//onClick={openLightbox}
 			/>
 			{props.enableLightbox !== false ? (
 				<ModalGateway
@@ -47,11 +48,13 @@ function App(props) {
 						<Modal onClose={closeLightbox}>
 							<Carousel
 								currentIndex={currentImage}
-								views={props.photos.map(x => ({
+								views={[props].map(x => {
+									console.log(x);
+									return ({
 									...x,
 									srcset: x.srcSet,
 									caption: x.title
-								}))}
+								})})}
 							/>
 						</Modal>
 					) : null}
