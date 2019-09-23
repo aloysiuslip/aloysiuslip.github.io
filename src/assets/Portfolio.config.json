@@ -110,9 +110,10 @@
 			{
 				"type": "carousel",
 				"width": "80%",
-				"maxWidth": "800px",
+				"maxWidth": "1000px",
 				"dynamicHeight": true,
 				"autoPlay": false,
+				"selectedItem": 2,
 				"paths": [
 					"AL Angel.jpg",
 					"AL Angel Vertical3.jpg",

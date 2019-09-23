@@ -59,7 +59,7 @@ export default class Dynamic extends React.Component {
 				axis={gallery.axis || 'horizontal'}
 				autoPlay={gallery.autoPlay !== false}
 				width={gallery.width || '100%'}
-				selectedItem={gallery.selectItem || 0}
+				selectedItem={gallery.selectedItem || 0}
 				showThumbs={gallery.showThumbs !== false}
 				interval={gallery.interval || 4000}
 				transitionTime={gallery.transitionTime || 500}
