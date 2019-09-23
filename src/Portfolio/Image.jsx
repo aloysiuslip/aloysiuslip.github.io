@@ -34,11 +34,12 @@ function App(props) {
 		<div
 			className="DisplayImage"			
 			key={props.id + '.' + props.i.toString() + '.Image' + Math.random().toString(32).slice(2)}
+
 		>
 			<img
 				{...props}
 				alt={props.alt}
-				//onClick={openLightbox}
+				onClick={() => openLightbox('click', props)}
 			/>
 			{props.enableLightbox !== false ? (
 				<ModalGateway
@@ -49,7 +50,6 @@ function App(props) {
 							<Carousel
 								currentIndex={currentImage}
 								views={[props].map(x => {
-									console.log(x);
 									return ({
 									...x,
 									srcset: x.srcSet,
