@@ -1,20 +1,11 @@
 import React from 'react';
-
+import {toProperCase} from '../const/util';
 import Image, {buildImage} from './Image';
 import Grid, {buildGrid} from './Grid';
 import Carousel, {buildCarousel} from './Carousel';
+import '../assets/styles/Portfolio.css';
 
 export default class Dynamic extends React.Component {
-
-	static toProperCase(str) {
-		let words = str.split(/ +/g);
-		let newArray = [];
-		for (let i = 0; i < words.length; i++) {
-			newArray[i] = words[i][0].toUpperCase() + words[i].slice(1, words[i].length).toLowerCase();
-		}
-		let newString = newArray.join(' ');
-		return newString;
-	}
 
 	getImage(gallery, i, id) {
 		return (
@@ -86,14 +77,17 @@ export default class Dynamic extends React.Component {
 
 	render() {
 		let element = (
-			<div className='post' key={this.props.id}>
+			<div
+				className='post portfolio-text'
+				key={this.props.id}
+			>
 				<h1>{this.props.title}</h1>
 				<h2>{this.props.subtitle}</h2>
 				{this.props.body}
 				{(this.props.galleries || []).map((gallery, i) => {
 					try {
 						if (!gallery.type) throw new Error('No type specified for gallery ' + gallery.id);
-						let func = 'get' + Dynamic.toProperCase(gallery.type);
+						let func = 'get' + toProperCase(gallery.type);
 						return this[func](gallery, i, this.props.id);
 					} catch (e) {
 						if (e) console.error(e);

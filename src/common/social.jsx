@@ -1,12 +1,6 @@
 import React from 'react';
 
-import github from '../assets/icons/github.png';
-import npm from '../assets/icons/npm.png';
-import devpost from '../assets/icons/devpost.png';
-import linkedin from '../assets/icons/linkedin.png';
-import facebook from '../assets/icons/facebook.png';
-import instagram from '../assets/icons/instagram.png';
-import email from '../assets/icons/email.png';
+import {github, npm, devpost, linkedin, facebook, instagram, email} from '../const/social';
 
 export default class Footer extends React.Component {
 

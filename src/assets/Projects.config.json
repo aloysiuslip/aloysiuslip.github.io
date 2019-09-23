@@ -1,0 +1,109 @@
+{
+	"Hackathons": [
+		{
+			"id": "oxfordhack",
+			"dependencies": [
+				"oxfordhack"
+			],
+			"status": {
+				"Project started": "24 November 2018",
+				"Project finished": "24 November 2018",
+				"Note": "server supporting the app is no longer running"
+			},
+			"title": "**OXFORD**HACK",
+			"description": "Over the course of 24 hours, I led a team to build an app which transcribed live and archival data from the House of Commons for a mobile viewer.",
+			"github": "https://github.com/theLAZYmd/ParliaMateBackend",
+			"devpost": "https://devpost.com/software/parliamate"
+		}
+	],
+	"Personal Projects": [
+		{
+			"id": "LAZYbot",
+			"dependencies": [
+				"bot",
+				"discordjs"
+			],
+			"status": {
+				"Project started": "29 March 2018",
+				"500 commits reached": "22 July 2019",
+				"Website published": "11 August 2019",
+				"status": "In active development"
+			},
+			"title": "**LAZY**bot",
+			"description": "A discord bot perfected for chess servers",
+			"website": "https://www.LAZYbot.co.uk/",
+			"github": "https://github.com/theLAZYmd/LAZYbot",
+			"npm": "https://www.npmjs.com/package/LAZYbot"
+		},
+		{
+			"id": "site",
+			"dependencies": [
+				"reactjs"
+			],
+			"status": {
+				"Project started": "17 September 2019",
+				"status": "In active development"
+			},
+			"title": "aloysiuslip.com",
+			"description": "My personal website, an opportunity to experiment with front-end technologies",
+			"website": "https://theLAZYmd.github.io/aloysius-lip",
+			"github": "https://github.com/theLAZYmd/site"
+		},
+		{
+			"id": "lazy-mail",
+			"status": {
+				"Project started": "20 October 2018",
+				"Stable build published": "14 November 2018"
+			},
+			"title": "**LAZY**mail",
+			"description": "Intuitive mod-mail features for Discord inspired by new Reddit mod-mail",
+			"github": "https://github.com/theLAZYmd/csv-json"
+		}
+	],
+	"Open Source Projects": [
+		{
+			"id": "lichess",
+			"status": {
+				"Project started": "20 March 2019",
+				"Stable and complete v1.0 build published": "4 July 2019",
+				"status": "Undergoing rewrite"
+			},
+			"title": "**lichess** for JS",
+			"description": "The predominant JavaScript wrapper for the lichess API",
+			"github": "https://github.com/theLAZYmd/lichess-js",
+			"npm": "https://www.npmjs.com/package/lichess"
+		},
+		{
+			"id": "aho-corasick",
+			"status": {
+				"Project started": "20 March 2019",
+				"Project finished, published to npm": "22 March 2019"
+			},
+			"title": "aho-corasick",
+			"description": "Extremely fast, extremely powerful, ES6 implementation of the Aho-Corasick string-matching algorithm with high user-customisability",
+			"github": "https://github.com/theLAZYmd/aho-corasick",
+			"npm": "https://www.npmjs.com/package/lazy-aho-corasick"
+		},
+		{
+			"id": "csv-json",
+			"status": {
+				"Project started": "16 December 2018",
+				"Project finished": "17 December 2018"
+			},
+			"title": "**csv**-json",
+			"description": "User-focused CSV parser to JavaScript object using JSON 3 syntax",
+			"github": "https://github.com/theLAZYmd/csv-json"
+		}
+	],
+	"other": [
+		{
+			"id": "hackerrank",
+			"status": {
+				"Languages": "node.js, python, C, C++"
+			},
+			"title": "HackerRank",
+			"description": "Solutions written to 'HackerRank' challenges",
+			"github": "https://github.com/theLAZYmd/challenges"
+		}
+	]
+}

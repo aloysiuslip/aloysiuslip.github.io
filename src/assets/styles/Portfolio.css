@@ -1,14 +1,3 @@
-
-.feed {
-	width: 61.8vw;
-	max-width: 61.8vw;
-}
-
-.post {
-	padding: 20px 0;
-	white-space: pre-wrap;
-}
-
 .DisplayImage {
 	align-items: center !important;
 	justify-content: center !important;
@@ -60,15 +49,4 @@
 
 .thumbs.animated {
 	padding: 0 !important;
-}
-
-.feed div {
-	text-align: justify;
-	justify-content: flex-start;
-	align-items: flex-start;
-}
-
-.feed div h1, .feed div h2 {
-	font-family: 'Amatic SC', cursive;
-	margin: 0;
 }

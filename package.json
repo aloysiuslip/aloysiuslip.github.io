@@ -3,6 +3,7 @@
 	"version": "0.0.3",
 	"private": true,
 	"homepage": "https://thelazymd.github.io/aloysius-lip",
+	"license": "MIT",
 	"dependencies": {
 		"node-sass": "^4.12.0",
 		"path": "^0.12.7",

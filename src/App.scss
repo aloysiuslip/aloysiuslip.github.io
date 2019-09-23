@@ -72,3 +72,21 @@ a {
 	text-align: justify !important;
 	margin: auto;
 }
+
+/*Feed pages*/
+
+.feed {
+	width: 61.8vw;
+	max-width: 61.8vw;
+}
+
+.feed div {
+	text-align: justify;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.feed div.portfolio-text h1, .feed div.portfolio-text h2 {
+	font-family: 'Amatic SC', cursive;
+	margin: 0;
+}
