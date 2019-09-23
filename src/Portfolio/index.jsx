@@ -67,7 +67,7 @@ export default class Dynamic extends React.Component {
 				dynamicHeight={gallery.dynamicHeight || false}
 				photos={data}
 				style={{
-					maxWidth: gallery.maxWidth !== undefined ? gallery.maxWidth : '1200px'
+					maxWidth: Math.min(parseInt(gallery.maxWidth !== undefined ? gallery.maxWidth : '1200px'), 0.7 * window.innerWidth)
 				}}
 			>
 				{data.map(props => {

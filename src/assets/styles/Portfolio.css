@@ -39,6 +39,7 @@
 .Carousel div {
 	align-items: center !important;
 	justify-content: center !important;
+	width: inherit;
 }
 
 .Carousel div:hover {
