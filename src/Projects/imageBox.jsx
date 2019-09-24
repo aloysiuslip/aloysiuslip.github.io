@@ -6,13 +6,13 @@ export default class ImageBox extends React.Component {
 		return (
 			<div
 				className='imageBox project-text'
-			>
-				<img
-					alt={this.props.id + '_image'}
-					src={this.props.image}
-				>
-				</img>
-			</div>
+				style={Object.assign(this.props.style, {
+					backgroundColor: 'black',
+					backgroundImage: `url(${this.props.image})`,
+					backgroundSize: 'cover',
+					backgroundPosition: 'center'
+				})}
+			/>
 		)
 	}
 }

@@ -9,9 +9,9 @@ export default class TextBox extends React.Component {
 		return (
 			<div
 				className='textBox project-text'
-				style={{
+				style={Object.assign(this.props.style, {
 					backgroundColor: this.props.colour || '#002147'
-				}}
+				})}
 			>
 				<div className='links prefix'>
 					{(this.props.dependencies || []).map(key => key in thumbs ?

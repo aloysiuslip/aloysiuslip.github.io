@@ -1,11 +1,10 @@
 import React from 'react';
+
 import Title from '../common/title';
 import Navigation from '../common/navigation';
 import Signature from '../common/signature';
 import Social from '../common/social';
-
 import Post from '../Projects';
-import style from '../assets/styles/Post.module.css';
 
 import config from '../assets/Projects.config.json';
 
@@ -20,7 +19,7 @@ export default class Portfolio extends React.Component {
 					{Object.entries(config).map(([section, posts], j) => {
 						return (
 							<React.Fragment>
-								{j > 0 ? <hr className='line'/> : null}
+								{/*j > 0 ? <hr className='line'/> : null*/}
 								{
 									section === 'other' ? null :
 									<h2>
@@ -30,9 +29,8 @@ export default class Portfolio extends React.Component {
 								{posts.map((p, i) => {
 									return (
 										<Post
-											className={style.project}
 											key={p.id}
-											i={i}
+											i={i + j}
 											{...p}
 										/>
 									)}

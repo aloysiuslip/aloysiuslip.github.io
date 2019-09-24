@@ -8,18 +8,36 @@ import TextBox from './textBox';
 export default class Dynamic extends React.Component {
 
 	render() {
-		let element = [
+		let element = isEven(this.props.i) ? [
 			<ImageBox
 				{...this.props}
+				style={{
+					gridColumn: '1 / span 1'
+				}}
 			/>,
 			<TextBox
 				{...this.props}
+				style={{
+					gridColumn: '2 / span 2'
+				}}
+			/>
+		] : [
+			<TextBox
+				{...this.props}
+				style={{
+					gridColumn: '1 / span 2'
+				}}
+			/>,
+			<ImageBox
+				{...this.props}
+				style={{
+					gridColumn: '3 / span 1'
+				}}
 			/>
 		];
-		if (!isEven(this.props.i)) element = element.reverse();
 		return (
 			<div
-				className={this.props.className}
+				className='post projects-text'
 				key={this.props.id}
 			>
 				{element}
