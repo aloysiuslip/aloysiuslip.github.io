@@ -2,17 +2,16 @@ import React from 'react';
 import {isEven} from '../const/util';
 import '../assets/styles/Projects.css';
 
+import ImageBox from './imageBox';
 import TextBox from './textBox';
 
 export default class Dynamic extends React.Component {
 
 	render() {
 		let element = [
-			<div
-				className='imageBox'
-			>
-				Hello world
-			</div>,
+			<ImageBox
+				{...this.props}
+			/>,
 			<TextBox
 				{...this.props}
 			/>

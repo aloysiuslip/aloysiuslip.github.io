@@ -207,7 +207,7 @@
 			},
 			{
 				"type": "carousel",
-				"width": "40%",
+				"width": "50%",
 				"showThumbs": false,
 				"paths": [
 					"1-0-01.jpg",

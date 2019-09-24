@@ -78,7 +78,7 @@ export default class Dynamic extends React.Component {
 	render() {
 		let element = (
 			<div
-				className='post portfolio-text'
+				className={'post portfolio-text'}
 				key={this.props.id}
 			>
 				<h1>{this.props.title}</h1>

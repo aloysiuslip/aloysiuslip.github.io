@@ -5,7 +5,6 @@ import Signature from '../common/signature';
 import Social from '../common/social';
 
 import Post from '../Portfolio';
-import style from '../assets/styles/Post.module.css';
 
 import config from '../assets/Portfolio.config.json';
 
@@ -25,7 +24,6 @@ export default class Portfolio extends React.Component {
 					{config.map(p => {
 						return (
 							<Post
-								className={style.portfolio}
 								key={p.id}
 								{...p}
 							/>

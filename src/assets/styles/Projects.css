@@ -1,13 +1,15 @@
 .imageBox {
 	width: 50%;
+	grid-area: 1/2/2/3;
 }
 
 .textBox {
 	display: flex;
 	width: 50%;
-	align-items: center !important;
-	justify-content: center !important;
+	align-items: center;
+	justify-content: center;
 	color: white;
+	grid-area: 1/2/2/3;
 }
 
 .textBox span.bold {
@@ -28,6 +30,14 @@ h4.description {
 	font-size: 50px;
 	font-weight: normal;
 	padding: 20px 0 10px 0;
+}
+
+.imageBox.project-text {
+	overflow: auto;
+	display: flex;
+}
+
+.imageBox.project-text img {
 }
 
 div.links {

@@ -1,23 +1,28 @@
-.DisplayImage {
-	align-items: center !important;
-	justify-content: center !important;
-	padding: 20px 0 0 0;
-	width: 61.8vw !important;
+.feed div.post.portfolio-text {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: justify;
+	padding: 20px 0;
+	white-space: pre-wrap;
+	width: 100%;
 }
 
-.Grid {
+.feed div.DisplayImage, .feed div.Grid, .feed div.Carousel {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
 	padding: 20px 0 0 0;
-	width: 61.8vw !important;
+	width: 61.8vw;
 }
 
-.Carousel {
-	align-items: center !important;
-	justify-content: center !important;
-	padding: 20px 0 0 0;
-	width: 60vw !important;
+.feed div.Carousel {
+	margin: auto;
 }
 
-.DisplayImage img {
+div.DisplayImage img {
 	max-width: 100%;
 }
 
@@ -25,14 +30,15 @@
 	cursor: pointer;
 }
 
-.Carousel div {
-	align-items: center !important;
-	justify-content: center !important;
+.feed div.Carousel > div {
+	display: flex;
+	flex-direction: column;
 	width: inherit;
+	align-items: center;
 }
 
-.Carousel div:hover {
-	cursor: pointer !important;
+.feed div.Carousel div:hover {
+	cursor: pointer;
 }
 
 .Grid img:hover {
@@ -40,13 +46,14 @@
 }
 
 .thumbs-wrapper {
-	width: 100% !important;
+	width: 100%;
 	overflow-x: auto !important;
-	margin: 0 !important;
-	align-items: center !important;
-	justify-content: center !important;
+	margin: auto !important;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 }
 
 .thumbs.animated {
-	padding: 0 !important;
+	padding: 0;
 }

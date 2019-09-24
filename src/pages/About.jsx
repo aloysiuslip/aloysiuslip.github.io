@@ -13,7 +13,7 @@ export default class Home extends React.Component {
 			<div className="container">
 				<Title />
 				<Navigation />
-				<div>
+				<div className="feed about">
 					<div className={styles.image}>
 						<img src={Send} alt="Write to Aloysius Lip"></img>
 					</div>
