@@ -9,7 +9,7 @@ export default class TextBox extends React.Component {
 		return (
 			<div
 				className='textBox project-text'
-				style={Object.assign(this.props.style, {
+				style={Object.assign({}, this.props.style, {
 					backgroundColor: this.props.colour || '#002147'
 				})}
 			>

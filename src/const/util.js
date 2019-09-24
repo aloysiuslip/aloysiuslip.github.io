@@ -11,3 +11,8 @@ export function toProperCase(str) {
 	let newString = newArray.join(' ');
 	return newString;
 }
+
+export function isVisible(element) {
+    const top = element.getBoundingClientRect().top;
+    return top >= 0 && top <= window.innerHeight;
+}

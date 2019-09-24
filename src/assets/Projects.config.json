@@ -14,7 +14,8 @@
 			"description": "Over the course of 24 hours, I led a team to build an app which transcribed live and archival data from the House of Commons for a mobile viewer.",
 			"github": "https://github.com/theLAZYmd/ParliaMateBackend",
 			"devpost": "https://devpost.com/software/parliamate",
-			"image": "oxhack-2.jpg"
+			"image": "oxhack-2.jpg",
+			"colour": "#002147"
 		}
 	],
 	"Personal Projects": [
@@ -35,7 +36,8 @@
 			"website": "https://www.LAZYbot.co.uk/",
 			"github": "https://github.com/theLAZYmd/LAZYbot",
 			"npm": "https://www.npmjs.com/package/LAZYbot",
-			"image": "gondor-venice-wallpaper.jpg"
+			"image": "gondor-venice-wallpaper.jpg",
+			"colour": "#2e2400"
 		},
 		{
 			"id": "site",
@@ -50,7 +52,11 @@
 			"description": "My personal website, an opportunity to experiment with front-end technologies",
 			"website": "https://theLAZYmd.github.io/aloysius-lip",
 			"github": "https://github.com/theLAZYmd/site",
-			"image": "chch.png"
+			"image": "chch.jpg",
+			"style": {
+				"backgroundSize": "60%"
+			},
+			"colour": "#037e8e"
 		},
 		{
 			"id": "lazy-mail",
@@ -61,7 +67,8 @@
 			"title": "**LAZY**mail",
 			"description": "Intuitive mod-mail features for Discord inspired by new Reddit mod-mail",
 			"github": "https://github.com/theLAZYmd/csv-json",
-			"image": "modmail.jpg"
+			"image": "modmail.jpg",
+			"colour": "#ff7716"
 		}
 	],
 	"Open Source Projects": [
@@ -76,7 +83,8 @@
 			"description": "The predominant JavaScript wrapper for the lichess API",
 			"github": "https://github.com/theLAZYmd/lichess-js",
 			"npm": "https://www.npmjs.com/package/lichess",
-			"image": "lazy-lila.jpg"
+			"image": "lazy-lila.jpg",
+			"colour": "#719f3f"
 		},
 		{
 			"id": "aho-corasick",
@@ -88,7 +96,8 @@
 			"description": "Extremely fast, extremely powerful, ES6 implementation of the Aho-Corasick string-matching algorithm with high user-customisability",
 			"github": "https://github.com/theLAZYmd/aho-corasick",
 			"npm": "https://www.npmjs.com/package/lazy-aho-corasick",
-			"image": "aho-corasick-2.jpg"
+			"image": "aho-corasick-2.jpg",
+			"colour": "#4b787e"
 		},
 		{
 			"id": "csv-json",
@@ -99,7 +108,8 @@
 			"title": "**csv**-json",
 			"description": "User-focused CSV parser to JavaScript object using JSON 3 syntax",
 			"github": "https://github.com/theLAZYmd/csv-json",
-			"image": "csv-json.jpg"
+			"image": "csv-json.jpg",
+			"colour": "#4da9c2"
 		}
 	],
 	"other": [
@@ -111,7 +121,8 @@
 			"title": "HackerRank",
 			"description": "Solutions written to 'HackerRank' challenges",
 			"github": "https://github.com/theLAZYmd/challenges",
-			"image": "hackerrank.jpg"
+			"image": "hackerrank.jpg",
+			"colour": "#be2d8b"
 		}
 	]
 }

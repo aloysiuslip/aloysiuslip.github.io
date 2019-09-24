@@ -11,9 +11,9 @@ export default class Dynamic extends React.Component {
 		let element = !isEven(this.props.i) ? [
 			<ImageBox
 				{...this.props}
-				style={{
+				style={Object.assign({}, this.props.style || {}, {
 					gridColumn: '1 / span 1'
-				}}
+				})}
 			/>,
 			<TextBox
 				{...this.props}
