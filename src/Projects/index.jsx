@@ -8,7 +8,7 @@ import TextBox from './textBox';
 export default class Dynamic extends React.Component {
 
 	render() {
-		let element = isEven(this.props.i) ? [
+		let element = !isEven(this.props.i) ? [
 			<ImageBox
 				{...this.props}
 				style={{
