@@ -11,7 +11,7 @@ export default class Dynamic extends React.Component {
 		let props = Object.assign({}, this.props, {
 			key: this.props.id + '.' + this.state + '.ImageBox'
 		});
-		let element = isEven(this.props.i) ? [
+		let element = !isEven(this.props.i) ? [
 			<ImageBox
 				{...props}
 				style={Object.assign({}, props.style, {

@@ -11,23 +11,21 @@ import config from '../assets/Projects.config.json';
 export default class Projects extends React.Component {
 
 	render() {
-		let i = 0;
 		return (
 			<div className="container">
 				<Title />
 				<Navigation />
 				<div className="feed">
-					{Object.entries(config).map(([section, posts]) => {
+					{Object.entries(config).map(([section, posts], j) => {
 						return (
-							<React.Fragment key={section + '.' + i}>
+							<React.Fragment key={section + '.' + j}>
 								{
 									section === 'other' ? null :
 									<h2>
 										{section}
 									</h2>
 								}
-								{posts.map((p) => {
-									i++;
+								{posts.map((p, i) => {
 									return (
 										<Post
 											key={p.id}
