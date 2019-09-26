@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7efe5f863c424cc9b2e0371d892c74cd",
+    "revision": "d8f54ce33122e3c258f5fd11e825b56f",
     "url": "/aloysius-lip/index.html"
   },
   {
