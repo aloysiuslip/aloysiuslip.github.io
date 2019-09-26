@@ -30,7 +30,7 @@
 	{
 		"date": "January 2017",
 		"id": "6.oums",
-		"title": "'An exercise in Homely design'",
+		"title": "'An exercise in hometown design'",
 		"subtitle": "OXFORD UNIVERSITY MIDLANDS Society - January 2019",
 		"body": "The community of Oxford University undergraduates decided to coalesce this year to form a society. Seeking out a cover and profile picture design for their Facebook page, I agreed to help them out, producing the following set of images. The latter was extremely enjoyable to produce as it features a large number of 'Midlands jokes' - famous people or objects from the Midlands. Source Image: https://i.imgur.com/m7zfuozg.jpg",
 		"galleries": [
@@ -63,40 +63,6 @@
 				"path": "SyndicateProduction.jpg",
 				"width": "100%",
 				"maxWidth": "2000px"
-			}
-		]
-	},
-	{
-		"date": "June 2017",
-		"id": "4.ukip",
-		"title": "'SATIRE'",
-		"subtitle": "The UKIP mock election campaign team - June 2017",
-		"body": "To coincide with the 2017 snap election, the school held an internal 'mock election' in which students could represent parties and campaign for their fellows' votes. In the humour of the season, I led the UKIP mock election campaign. In a test of graphic design capability and an homage to the history department, the first series of posters designed took propaganda used by the Nazi party, the originals (left) dating from 1930s Germany and employed subtle modifications. The second series feature a more sombre set of infoslides, as one might typically see on an official party social media account, to stretch my abilities in formal/official design. The posters make reference to a now-inactive @kesukip Instagram account that I ran for the duration of the campaign.",
-		"galleries": [
-			{
-				"type": "carousel",
-				"axis": "vertical",
-				"showThumbs": false,
-				"width": "100%",
-				"maxWidth": "800px",
-				"paths": [
-					"youth.jpg",
-					"politicians.jpg",
-					"negotiations.jpg",
-					"deustcheland.jpg"
-				]
-			},
-			{
-				"type": "carousel",
-				"width": "80%",
-				"maxWidth": "800px",
-				"showThumbs": false,
-				"paths": [
-					"purple revolution.jpg",
-					"revolution red.jpg",
-					"revolution white.jpg",
-					"revolution blue.JPG"
-				]
 			}
 		]
 	},

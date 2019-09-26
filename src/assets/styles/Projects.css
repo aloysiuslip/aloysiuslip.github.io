@@ -5,6 +5,7 @@
 	display: grid;
 	grid-template-columns: 38.2% auto 38.2%;
 	width: 100%;
+	min-width: 600px;
 }
 
 .imageBox {

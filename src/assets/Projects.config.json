@@ -1,21 +1,42 @@
 {
 	"Hackathons": [
 		{
-			"id": "oxfordhack",
+			"id": "oxfordhack.2019",
 			"dependencies": [
 				"oxfordhack"
 			],
 			"status": {
-				"Project started": "24 November 2018",
-				"Project finished": "24 November 2018",
-				"Note": "server supporting the app is no longer running"
+				"Project run": "24 November 2018",
+				"Project finished": "25 November 2018"
 			},
-			"title": "**OXFORD**HACK",
+			"title": "**OXFORD**HACK 2018",
 			"description": "Over the course of 24 hours, I led a team to build an app which transcribed live and archival data from the House of Commons for a mobile viewer.",
-			"github": "https://github.com/theLAZYmd/ParliaMateBackend",
+			"github_frontend": "https://github.com/theLAZYmd/ParliaMate",
+			"github_backend": "https://github.com/theLAZYmd/ParliaMateBackend",
 			"devpost": "https://devpost.com/software/parliamate",
-			"image": "oxhack-2.jpg",
-			"colour": "#002147"
+			"image": "parliamate.jpg",
+			"colour": "#002147",
+			"style": {
+				"backgroundPosition": "-35px",
+				"backgroundColor": "#36845a"
+			}
+		},
+		{
+			"id": "hackmit.2019",
+			"dependencies": [
+				"hackmit"
+			],
+			"status": {
+				"Project run": "14 September 2018",
+				"Project finished": "15 September 2018"
+			},
+			"title": "Hack**MIT** 2019",
+			"description": "Of a choice of 6 ideas I drew up, we built a app for the 'Social Goodness' category that sought to quantify an individual's contribution to others and the environment",
+			"github_frontend": "https://github.com/coisin/goodness-frontend",
+			"github_backend": "https://github.com/johnryan465/goodness-backend",
+			"devpost": "https://devpost.com/software/goodness",
+			"image": "goodness.jpg",
+			"colour": "#17abdf"
 		}
 	],
 	"Personal Projects": [
@@ -26,7 +47,7 @@
 				"discordjs"
 			],
 			"status": {
-				"Project started": "29 March 2018",
+				"Project created": "29 March 2018",
 				"500 commits reached": "22 July 2019",
 				"Website published": "11 August 2019",
 				"status": "In active development"
@@ -45,7 +66,7 @@
 				"reactjs"
 			],
 			"status": {
-				"Project started": "17 September 2019",
+				"Project created": "17 September 2019",
 				"status": "In active development"
 			},
 			"title": "aloysiuslip.com",
@@ -54,28 +75,40 @@
 			"github": "https://github.com/theLAZYmd/site",
 			"image": "chch.jpg",
 			"style": {
-				"backgroundSize": "60%"
+				"backgroundSize": "80%",
+				"backgroundColor": "#8e1303"
 			},
 			"colour": "#037e8e"
 		},
 		{
 			"id": "lazy-mail",
+			"dependencies": [
+				"bot",
+				"discordjs"
+			],
 			"status": {
-				"Project started": "20 October 2018",
+				"Project created": "20 October 2018",
 				"Stable build published": "14 November 2018"
 			},
 			"title": "**LAZY**mail",
 			"description": "Intuitive mod-mail features for Discord inspired by new Reddit mod-mail",
 			"github": "https://github.com/theLAZYmd/csv-json",
 			"image": "modmail.jpg",
-			"colour": "#ff7716"
+			"colour": "#ff7716",
+			"style": {
+				"backgroundColor": "#169fff",
+				"backgroundSize": "100%"
+			}
 		}
 	],
 	"Open Source Projects": [
 		{
 			"id": "lichess",
+			"dependencies": [
+				"lichess"
+			],
 			"status": {
-				"Project started": "20 March 2019",
+				"Project created": "20 March 2019",
 				"Stable and complete v1.0 build published": "4 July 2019",
 				"status": "Undergoing rewrite"
 			},
@@ -87,10 +120,26 @@
 			"colour": "#719f3f"
 		},
 		{
+			"id": "ecf",
+			"dependencies": [
+				"ecf"
+			],
+			"status": {
+				"Project created": "15 August 2019",
+				"Project finished and published": "16 August 2019"
+			},
+			"title": "**ECF** for JS",
+			"description": "The Node.JS API for the ECF chess grading database to make gradings human-readable and queryable",
+			"github": "https://github.com/theLAZYmd/ECF",
+			"npm": "https://www.npmjs.com/package/ecf",
+			"image": "ecf.jpg",
+			"colour": "#3e3f8f"
+		},
+		{
 			"id": "aho-corasick",
 			"status": {
-				"Project started": "20 March 2019",
-				"Project finished, published to npm": "22 March 2019"
+				"Project created": "20 March 2019",
+				"Project finished and published": "22 March 2019"
 			},
 			"title": "aho-corasick",
 			"description": "Extremely fast, extremely powerful, ES6 implementation of the Aho-Corasick string-matching algorithm with high user-customisability",
@@ -100,12 +149,50 @@
 			"colour": "#4b787e"
 		},
 		{
+			"id": "select-prop",
+			"status": {
+				"Project created": "28 August 2019",
+				"Project finished and published": "28 August 2019"
+			},
+			"title": "select-prop",
+			"description": "A powerful and light-weight selector for instantly cutting to the heart of big, nested data to find all useful properties. Takes a simple string query parameter and fetches all possible matching nested values of an object.",
+			"github": "https://github.com/theLAZYmd/select-prop",
+			"npm": "https://www.npmjs.com/package/select-prop",
+			"image": "select-prop.jpg",
+			"colour": "#846eff"
+		},
+		{
+			"id": "get-param-names",
+			"status": {
+				"Project created": "24 April 2019",
+				"Project finished and published": "24 April 2019"
+			},
+			"title": "get-param-names",
+			"description": "A unique library that takes a JavaScript function and returns its input parameter 'names'. Tested to work with even destructured params and params with default values",
+			"github": "https://github.com/theLAZYmd/get-param-names",
+			"npm": "https://www.npmjs.com/package/get-param-names",
+			"image": "get-param-names.jpg",
+			"colour": "#91475a"
+		},		
+		{
+			"id": "midi-encoder",
+			"status": {
+				"Project created": "18 July 2019",
+				"Project finished and published": "18 July 2019"
+			},
+			"title": "midi-encoder",
+			"description": "Simple CLI to convert musical notes into their ASCII values, for cryptanalysis purposes",
+			"github": "https://github.com/theLAZYmd/midi_encoder",
+			"image": "midi.jpg",
+			"colour": "#6b5542"
+		},
+		{
 			"id": "csv-json",
 			"status": {
-				"Project started": "16 December 2018",
+				"Project created": "16 December 2018",
 				"Project finished": "17 December 2018"
 			},
-			"title": "**csv**-json",
+			"title": "csv-json",
 			"description": "User-focused CSV parser to JavaScript object using JSON 3 syntax",
 			"github": "https://github.com/theLAZYmd/csv-json",
 			"image": "csv-json.jpg",

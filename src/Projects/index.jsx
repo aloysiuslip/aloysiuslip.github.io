@@ -8,14 +8,18 @@ import TextBox from './textBox';
 export default class Dynamic extends React.Component {
 
 	render() {
-		let element = !isEven(this.props.i) ? [
+		let props = Object.assign({}, this.props, {
+			key: this.props.id + '.' + this.state + '.ImageBox'
+		});
+		let element = isEven(this.props.i) ? [
 			<ImageBox
-				{...this.props}
-				style={Object.assign({}, this.props.style || {}, {
+				{...props}
+				style={Object.assign({}, props.style, {
 					gridColumn: '1 / span 1'
 				})}
 			/>,
 			<TextBox
+				key={this.props.id + '.' + this.props.i + '.TextBox'}
 				{...this.props}
 				style={{
 					gridColumn: '2 / span 2'
@@ -23,16 +27,17 @@ export default class Dynamic extends React.Component {
 			/>
 		] : [
 			<TextBox
+				key={this.props.id + '.' + this.props.i + '.TextBox'}
 				{...this.props}
 				style={{
 					gridColumn: '1 / span 2'
 				}}
 			/>,
 			<ImageBox
-				{...this.props}
-				style={{
+				{...props}
+				style={Object.assign({}, props.style, {
 					gridColumn: '3 / span 1'
-				}}
+				})}
 			/>
 		];
 		return (

@@ -3,7 +3,28 @@ import {isEven} from '../const/util';
 import {github, npm, devpost} from '../const/social';
 import thumbs from '../const/thumbnails';
 
+const social = Object.assign({}, {github, npm, devpost});
+const validLinkRegex = /^(github|npm|devpost)/;
+
 export default class TextBox extends React.Component {
+
+	generateLinks(entries) {
+		return entries.map(([_k, v], i) => {
+			if (!validLinkRegex.test(_k)) return null;
+			let [, k] = _k.match(validLinkRegex);
+			return (
+				<a
+					key={this.props.id + '.' + this.props.i + '.TextBox.a.' + i}
+					id={_k}
+					href={v}
+					rel="noopener noreferrer"
+					target="_blank" 
+				>
+					<img alt={_k + '_logo'} src={social[k]}/>
+				</a>
+			);
+		});
+	}
 
 	render() {
 		return (
@@ -15,7 +36,7 @@ export default class TextBox extends React.Component {
 			>
 				<div className='links prefix'>
 					{(this.props.dependencies || []).map(key => key in thumbs ?
-						<a href={thumbs[key].uri} rel="noopener noreferrer" target="_blank">
+						<a key={this.props.id + '.' + key} href={thumbs[key].uri} rel="noopener noreferrer" target="_blank">
 							<img
 								alt={thumbs[key].alt}
 								src={thumbs[key].src}
@@ -28,7 +49,7 @@ export default class TextBox extends React.Component {
 					{this.props.title.includes('**') ?
 						this.props.title.split('**').map((element, i) => {
 							if (isEven(i)) return element;
-							else return <span className='bold'>{element}</span> 
+							else return <span key={element + '.' + i} className='bold'>{element}</span> 
 						})
 					: this.props.title}
 				</h1>
@@ -38,14 +59,12 @@ export default class TextBox extends React.Component {
 				{
 					(Object.entries(this.props.status || {})).map(([k, v]) => {
 						return (
-							<h4 className='status'>{k === 'status' ? v : k + ': ' + v}</h4>
+							<h4 key={this.props.id + '.description.' + k} className='status'>{k === 'status' ? v : k + ': ' + v}</h4>
 						)
 					})
 				}
 				<div className='links suffix'>
-					{this.props.github ? <a href={this.props.github}><img alt='github_logo' src={github} rel="noopener noreferrer" target="_blank"></img></a> : null}
-					{this.props.npm ? <a href={this.props.npm}><img alt='npm_logo' src={npm} rel="noopener noreferrer" target="_blank"></img></a> : null}
-					{this.props.devpost ? <a href={this.props.devpost}><img alt='devpost_logo' src={devpost} rel="noopener noreferrer" target="_blank"></img></a> : null}
+					{this.generateLinks(Object.entries(this.props))}
 				</div>
 			</div>
 		)

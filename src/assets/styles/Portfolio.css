@@ -1,11 +1,17 @@
 .feed div.post.portfolio-text {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: left;
 	text-align: justify;
 	padding: 20px 0;
 	white-space: pre-wrap;
 	width: 100%;
+}
+
+.feed div.portfolio-text h1, .feed div.portfolio-text h2 {
+	font-family: 'Amatic SC', cursive;
+	margin: 0;
+	text-align: left;
 }
 
 .feed div.DisplayImage, .feed div.Grid, .feed div.Carousel {
