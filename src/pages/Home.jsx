@@ -1,4 +1,6 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
+
 import Title from '../common/title';
 import Navigation from '../common/navigation';
 import Signature from '../common/signature';
@@ -20,7 +22,7 @@ export default class Home extends React.Component {
 							<div>
 								<h1>Oxford Hack 2018</h1>
 								<h4>An international coding competition inviting students from pre-University to DPhil. Leader of the team 'ParliaMate', overall competition winners and winners of the 'Deloitte API Prize' and the 'Google Cloud Compute Challenge'</h4>
-								<div><a href='/projects'>PROJECT</a></div>
+								<div><Link to='/projects'>PROJECT</Link></div>
 							</div>
 						</div>
 					</div>

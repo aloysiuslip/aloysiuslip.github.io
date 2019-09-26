@@ -51,8 +51,14 @@ a {
 	margin: auto;
 }
 
-.navigation a {
+.navigation > a {
 	padding: 0px 20px;
+	opacity: 0.5;
+}
+
+.navigation > a:hover {
+	padding: 0px 20px;
+	opacity: 0.75;
 }
 
 .signature {

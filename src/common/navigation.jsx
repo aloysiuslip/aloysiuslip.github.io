@@ -4,24 +4,29 @@ import {Link} from 'react-router-dom';
 export default class Navigation extends React.Component {
 
 	render() {
+		const pages = {
+			home: {
+				_aliases: ['']
+			},
+			projects: {},
+			portfolio: {},
+			articles: {
+				display: 'none'
+			},
+			about: {}
+		}
 		return (
-			<div className="navigation">
-				<Link to="/home">
-					<h3>home</h3>
-				</Link>
-				<Link to="/projects">
-					<h3>projects</h3>
-				</Link>
-				<Link to="/portfolio">
-					<h3>portfolio</h3>
-				</Link>
-				<Link to="/articles" style={{display: "none"}}>
-					<h3>articles</h3>
-				</Link>
-				<Link to="/about">
-					<h3>about</h3>
-				</Link>
+			<div className='navigation'>
+				{Object.entries(pages).map(([k, v]) => {
+					if ((v._aliases || []).concat([k]).some(p => window.location.pathname === '/' + p)) v.opacity = 1.0;
+					if (v._aliases) delete v._aliases;
+					return (
+						<Link to={'/' + k} style={v}>
+							<h3>{k}</h3>
+						</Link>
+					)
+				})}
 			</div>
-		);
+		)
 	}
 }
