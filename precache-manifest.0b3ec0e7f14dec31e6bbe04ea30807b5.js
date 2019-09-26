@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "43bd55c24af09299f1818864a9b80928",
+    "revision": "da164ad43f6601e9cf5de42f2b577e52",
     "url": "/aloysius-lip/index.html"
   },
   {
-    "revision": "befe4684e2477e22fcc6",
+    "revision": "6a794ffb8dcc730dedde",
     "url": "/aloysius-lip/static/css/2.3c1ddb0a.chunk.css"
   },
   {
-    "revision": "d4ad813edfc1e888313f",
-    "url": "/aloysius-lip/static/css/main.90dfbcbd.chunk.css"
+    "revision": "20e3e7468ce2725c8005",
+    "url": "/aloysius-lip/static/css/main.ebe99235.chunk.css"
   },
   {
-    "revision": "befe4684e2477e22fcc6",
-    "url": "/aloysius-lip/static/js/2.29619982.chunk.js"
+    "revision": "6a794ffb8dcc730dedde",
+    "url": "/aloysius-lip/static/js/2.0439df15.chunk.js"
   },
   {
-    "revision": "d4ad813edfc1e888313f",
-    "url": "/aloysius-lip/static/js/main.0e8be9fa.chunk.js"
+    "revision": "20e3e7468ce2725c8005",
+    "url": "/aloysius-lip/static/js/main.cf1ce2e1.chunk.js"
   },
   {
     "revision": "c4d6ddd96cd0cdc519bc",
@@ -32,6 +32,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/aloysius-lip/static/media/djs.220203d9.png"
   },
   {
+    "revision": "19f6f5e74c95428be9ac5067e3b86a8d",
+    "url": "/aloysius-lip/static/media/ecf.19f6f5e7.png"
+  },
+  {
     "revision": "2c121c2e05a992535f6c8f1204c52a24",
     "url": "/aloysius-lip/static/media/facebook.2c121c2e.png"
   },
@@ -40,8 +44,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/aloysius-lip/static/media/github.c298f843.png"
   },
   {
+    "revision": "91540e799a1cf30a43a371b813deea25",
+    "url": "/aloysius-lip/static/media/hackmit.91540e79.png"
+  },
+  {
     "revision": "2039dab42c532a502f5599badee9ebc3",
     "url": "/aloysius-lip/static/media/instagram.2039dab4.png"
+  },
+  {
+    "revision": "4c42629f687127cbcba618cf0be150ba",
+    "url": "/aloysius-lip/static/media/lichess.4c42629f.png"
   },
   {
     "revision": "b424c19c2e911cd666a6ecbf522647e6",
