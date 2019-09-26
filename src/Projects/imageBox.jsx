@@ -1,11 +1,12 @@
 import React from 'react';
+import path from 'path';
 
 export default class ImageBox extends React.Component {
 
 	render() {
 		let style = Object.assign({}, {
 			backgroundColor: 'black',
-			backgroundImage: `url(/artwork/${this.props.image})`,
+			backgroundImage: `url(${path.join(process.env.PUBLIC_URL, 'artwork', this.props.image)})`,
 			backgroundSize: 'cover',
 			backgroundPosition: 'center',
 			backgroundRepeat: 'no-repeat'

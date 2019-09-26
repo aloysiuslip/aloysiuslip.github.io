@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import path from 'path';
 
 import Title from '../common/title';
 import Navigation from '../common/navigation';
@@ -16,7 +17,7 @@ export default class Home extends React.Component {
 				<div className='feed'>
 					<div className='stager'>
 						<div className='imageBox'>
-							<img alt='Oxford_Hack' src='/artwork/oxhack.jpg'/>
+							<img alt='Oxford_Hack' src={path.join(process.env.PUBLIC_URL, 'artwork', 'oxhack.jpg')}/>
 						</div>
 						<div className='infoBox'>
 							<div>
