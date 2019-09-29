@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import axios from 'axios';
 
 import {italicise} from '../const/util';
@@ -67,10 +68,10 @@ export default class Articles extends React.Component {
 								if (isNaN(date.getTime())) return null;
 								return (
 									<li key={id}>
-										<a href={href}>
+										<Link to={href}>
 											<h3>{italicise(name)}</h3>
 											<h4>{dateCreated}</h4>
-										</a>
+										</Link>
 									</li>
 								)
 							})}

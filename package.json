@@ -1,6 +1,6 @@
 {
 	"name": "aloysius-lip",
-	"version": "0.0.3",
+	"version": "0.0.6",
 	"private": true,
 	"homepage": ".",
 	"license": "MIT",
@@ -27,7 +27,7 @@
 		"eject": "react-scripts eject",
 		"predeploy": "npm run build",
 		"deploy": "gh-pages -d build -o origin -b gh-pages",
-		"public": "gh-pages -d build -o test -b gh-pages -u theLAZYmd.01@gmail.com"
+		"public": "gh-pages -d build -o public -b gh-pages -u theLAZYmd.01@gmail.com"
 	},
 	"eslintConfig": {
 		"extends": "react-app"
