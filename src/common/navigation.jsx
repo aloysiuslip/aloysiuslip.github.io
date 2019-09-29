@@ -10,18 +10,16 @@ export default class Navigation extends React.Component {
 			},
 			projects: {},
 			portfolio: {},
-			articles: {
-				display: 'none'
-			},
+			articles: {},
 			about: {}
 		}
 		return (
 			<div className='navigation'>
 				{Object.entries(pages).map(([k, v]) => {
-					if ((v._aliases || []).concat([k]).some(p => window.location.pathname === '/' + p)) v.opacity = 1.0;
+					if ((v._aliases || []).concat([k]).some(p => p && window.location.pathname.startsWith('/' + p))) v.opacity = 1.0;
 					if (v._aliases) delete v._aliases;
 					return (
-						<Link to={'/' + k} style={v}>
+						<Link key={'navigation.' + k} to={'/' + k} style={v}>
 							<h3>{k}</h3>
 						</Link>
 					)

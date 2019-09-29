@@ -1,0 +1,4 @@
+div.feed.articles, div.feed > div.article {
+	align-items: flex-start;
+	text-align: left;
+}

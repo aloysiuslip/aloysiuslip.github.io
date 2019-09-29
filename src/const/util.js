@@ -1,3 +1,5 @@
+import React from 'react';
+
 export function isEven(value) {
 	return value % 2 === 0;
 }
@@ -15,4 +17,12 @@ export function toProperCase(str) {
 export function isVisible(element) {
     const top = element.getBoundingClientRect().top;
     return top >= 0 && top <= window.innerHeight;
+}
+
+export function italicise(string) {
+	if (!string.includes('*')) return string;
+	return string.split('*').map((element, i) => {
+		if (isEven(i)) return element;
+		else return <span key={element + '.' + i} className='italic'>{element}</span> 
+	});
 }
