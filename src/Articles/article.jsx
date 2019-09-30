@@ -9,10 +9,6 @@ import Social from '../common/social';
 import NotFound from '../pages/NotFound';
 
 import '../assets/styles/Articles.css';
-
-import config from '../assets/config.json';
-const pathname = `${config.backend}/site-backend/public/|/|.md`;
-
 export default class Article extends React.Component {
 
 	constructor(props) {
@@ -22,20 +18,27 @@ export default class Article extends React.Component {
 		}
 	}
 
-	componentDidUpdate() {
-		if (this.state.data) return;
+	getArticle() {
 		let value = this.props[window.location.pathname];
 		if (!value) return;
-		let url = pathname.replace('|', this.props.window.match.params.section).replace('|', value);
-		let constructor = this;
-		axios.get(url)
+		axios.get('/site-backend/public/|/|.md'.replace('|', this.props.window.match.params.section).replace('|', value))
 			.then(response => response.data)
 			.then(body => {
-				constructor.setState({
+				this.setState({
 					data: body
 				});
 				this.forceUpdate();
 			})
+	}
+
+	componentDidMount() {
+		if (this.state.data) return;
+		this.getArticle();
+	}
+
+	componentDidUpdate() {
+		if (this.state.data) return;
+		this.getArticle();
 	}
 
 	render() {

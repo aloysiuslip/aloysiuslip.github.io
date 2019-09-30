@@ -12,7 +12,7 @@ import NotFound from './pages/NotFound';
 
 import axios from 'axios';
 import config from './assets/config.json';
-const index = `${config.backend}/site-backend/public/index.json`;
+axios.defaults.baseURL = config.backend;
 const regex = /(?:\w|\s)+/g;
 
 export default class App extends React.Component {
@@ -25,10 +25,7 @@ export default class App extends React.Component {
 	}
 	
 	static getArticles() {
-		return axios({
-			method: 'get',
-			url: index
-		})
+		return axios('/site-backend/public/index.json')
 			.then(response => response.data)
 			.then(body => {
 				let articles = {};
