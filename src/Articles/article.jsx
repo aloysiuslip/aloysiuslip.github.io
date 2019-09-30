@@ -18,16 +18,15 @@ export default class Article extends React.Component {
 		}
 	}
 
-	getArticle() {
-		let value = this.props[window.location.pathname];
-		if (!value) return;
-		axios(`/public/${this.props.window.match.params.section}/${value.id}.md?token=${Math.random().toString(32).slice(2)}`)
-			.then(response => response.data)
-			.then(body => {
-				this.setState({
-					data: body
-				});
-			})
+	async getArticle() {
+		try {
+			let value = this.props[window.location.pathname];
+			if (!value) return;
+			let {data} = await axios(`/public/${this.props.window.match.params.section}/${value.id}.md?token=${Math.random().toString(32).slice(2)}`)
+			this.setState({data});
+		} catch (e) {
+			console.error(e);
+		}
 	}
 
 	componentDidMount() {

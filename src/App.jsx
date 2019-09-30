@@ -24,40 +24,37 @@ export default class App extends React.Component {
 		}
 	}
 	
-	static getArticles() {
-		return axios('/public/index.json')
-			.then(response => response.data)
-			.then(body => {
-				let articles = {};
-				Object.entries(body.articles).map(([sectionKey, v]) => {
-					v.forEach((data) => {
-						let {name, dateCreated} = data;
-						let date = new Date(dateCreated);
-						if (isNaN(date.getTime())) return;
-						let year = date.getFullYear();
-						let month = date.getMonth();
-						let day = date.getDay();
-						let urlEncoded = name.toLowerCase().match(regex).join('').split(' ').join('-');
-						let section = body.keys[sectionKey];
-						let href = `/articles/${sectionKey}/${year}/${month}/${day}/${urlEncoded}`;
-						let key = process.env.PUBLIC_URL + href;
-						articles[key] = Object.assign(data, {
-							year, month, day, href, section, sectionKey
-						});
+	static async getArticles() {
+		try {
+			let {body} = axios('/public/index.json')
+			let articles = {};
+			Object.entries(body.articles).map(([sectionKey, v]) => {
+				v.forEach((data) => {
+					let {name, dateCreated} = data;
+					let date = new Date(dateCreated);
+					if (isNaN(date.getTime())) return;
+					let year = date.getFullYear();
+					let month = date.getMonth();
+					let day = date.getDay();
+					let urlEncoded = name.toLowerCase().match(regex).join('').split(' ').join('-');
+					let section = body.keys[sectionKey];
+					let href = `/articles/${sectionKey}/${year}/${month}/${day}/${urlEncoded}`;
+					let key = process.env.PUBLIC_URL + href;
+					articles[key] = Object.assign(data, {
+						year, month, day, href, section, sectionKey
 					});
-					return articles;
-				})
+				});
 				return articles;
 			})
-			.catch(console.error);
+			return articles;
+		} catch(e) {
+			console.error(e);
+		}
 	}
 
-	componentDidMount() {
-		App.getArticles().then((data) => {
-			this.setState({
-				articles: data
-			});
-		});
+	async componentDidMount() {
+		let articles = await App.getArticles()
+		this.setState({articles});
 	}
 
 	render() {
