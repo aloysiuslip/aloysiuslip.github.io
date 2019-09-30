@@ -2,7 +2,7 @@
 	"name": "aloysius-lip",
 	"version": "0.0.6",
 	"private": true,
-	"homepage": ".",
+	"homepage": "https://thelazymd.github.io/aloysius-lip",
 	"license": "MIT",
 	"dependencies": {
 		"axios": "^0.19.0",
