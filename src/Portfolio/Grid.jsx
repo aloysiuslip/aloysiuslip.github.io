@@ -4,7 +4,7 @@ import Carousel, { Modal, ModalGateway } from "react-images";
 
 export function buildGrid(paths, i, id, {ratio, ratios = []}) {
 	let arr = paths.map((name, j) => {
-		let uri = [window.location.origin + process.env.PUBLIC_URL, 'gallery', id, i.toString(), name].join('/');
+		let uri = [process.env.PUBLIC_URL, 'gallery', id, i.toString(), name].join('/');
 		if (!ratios[j]) ratios[j] = ratio || [1, 1];
 		return {
 			key: id + '.' + i.toString() + '.' + j.toString(),

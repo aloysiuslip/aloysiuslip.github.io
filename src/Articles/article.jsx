@@ -21,19 +21,13 @@ export default class Article extends React.Component {
 	getArticle() {
 		let value = this.props[window.location.pathname];
 		if (!value) return;
-		axios.get('/site-backend/public/|/|.md'.replace('|', this.props.window.match.params.section).replace('|', value))
+		axios.get(`/site-backend/public/${this.props.window.match.params.section}/${value}.md`)
 			.then(response => response.data)
 			.then(body => {
 				this.setState({
 					data: body
 				});
-				this.forceUpdate();
 			})
-	}
-
-	componentDidMount() {
-		if (this.state.data) return;
-		this.getArticle();
 	}
 
 	componentDidUpdate() {

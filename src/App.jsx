@@ -34,7 +34,7 @@ export default class App extends React.Component {
 					v.forEach(({id, name, dateCreated}) => {
 						let date = new Date(dateCreated);
 						if (isNaN(date.getTime())) return;
-						let href = `/articles/${k}/${date.getFullYear()}/${date.getMonth()}/${date.getDay()}/${name.toLowerCase().match(regex).join('').split(' ').join('-')}`;
+						let href = `${process.env.PUBLIC_URL}/articles/${k}/${date.getFullYear()}/${date.getMonth()}/${date.getDay()}/${name.toLowerCase().match(regex).join('').split(' ').join('-')}`;
 						articles[href] = id;
 					});
 					return articles;
