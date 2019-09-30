@@ -4,10 +4,7 @@ import axios from 'axios';
 
 import {italicise} from '../const/util';
 
-import '../assets/styles/Articles.css'
-
-import config from '../assets/config.json';
-const index = `${config.backend}/site-backend/public/index.json`;
+import '../assets/styles/Articles.css';
 const regex = /(?:\w|\s)+/g;
 
 export default class Articles extends React.Component {
@@ -22,10 +19,7 @@ export default class Articles extends React.Component {
 	}
 
 	static get() {
-		return axios({
-			method: 'get',
-			url: index
-		})
+		return axios('/public/index.json')
 			.then(response => response.data)
 			.then(body => {
 				let keys = body.keys;
