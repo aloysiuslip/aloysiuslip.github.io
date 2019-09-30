@@ -8,6 +8,7 @@ import styles from '../assets/styles/About.module.css';
 import Send from '../assets/thumbnails/send.png';
 
 export default class Home extends React.Component {
+
 	render() {
 		return (
 			<div className="container">

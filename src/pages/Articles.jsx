@@ -14,7 +14,7 @@ export default class Articles extends React.Component {
 			<div className="container">
 				<Title />
 				<Navigation />
-				<Feed />
+				<Feed {...this.props}/>
 				<Signature />
 				<Social />
 			</div>

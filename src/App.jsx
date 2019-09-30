@@ -29,13 +29,21 @@ export default class App extends React.Component {
 			.then(response => response.data)
 			.then(body => {
 				let articles = {};
-				Object.entries(body.articles).map(([k, v]) => {
-					articles[k] = [];
-					v.forEach(({id, name, dateCreated}) => {
+				Object.entries(body.articles).map(([sectionKey, v]) => {
+					v.forEach((data) => {
+						let {name, dateCreated} = data;
 						let date = new Date(dateCreated);
 						if (isNaN(date.getTime())) return;
-						let href = `${process.env.PUBLIC_URL}/articles/${k}/${date.getFullYear()}/${date.getMonth()}/${date.getDay()}/${name.toLowerCase().match(regex).join('').split(' ').join('-')}`;
-						articles[href] = id;
+						let year = date.getFullYear();
+						let month = date.getMonth();
+						let day = date.getDay();
+						let urlEncoded = name.toLowerCase().match(regex).join('').split(' ').join('-');
+						let section = body.keys[sectionKey];
+						let href = `/articles/${sectionKey}/${year}/${month}/${day}/${urlEncoded}`;
+						let key = process.env.PUBLIC_URL + href;
+						articles[key] = Object.assign(data, {
+							year, month, day, href, section, sectionKey
+						});
 					});
 					return articles;
 				})
@@ -56,13 +64,13 @@ export default class App extends React.Component {
 		return (
 			<Router basename={process.env.PUBLIC_URL}>
 				<Switch>
-					<Route path='/' exact component={Home} />
-					<Route path='/projects' exact component={Projects} />
-					<Route path='/portfolio' exact component={Portfolio} />
-					<Route path='/articles' exact component={Articles} />
-					<Route path='/articles/:section/:year/:month/:date/:title' render={(props) => <Article window={props} {...this.state.articles} />} />
-					<Route path='/about' exact component={About} />
-					<Route path='/home' exact component={() => <Redirect to='/' />} />
+					<Route exact path='/' component={Home} />
+					<Route exact path='/projects' component={Projects} />
+					<Route exact path='/portfolio' component={Portfolio} />
+					<Route exact path='/articles' render={() => <Articles {...this.state.articles} />} />
+					<Route exact path='/articles/:section/:year/:month/:date/:title' render={(props) => <Article window={props} {...this.state.articles} />} />
+					<Route exact path='/about' component={About} />
+					<Route exact path='/home' component={() => <Redirect to='/' />} />
 					<Route path='*' component={NotFound} status={404} />
 				</Switch>
 			</Router>

@@ -21,7 +21,7 @@ export default class Article extends React.Component {
 	getArticle() {
 		let value = this.props[window.location.pathname];
 		if (!value) return;
-		axios(`/public/${this.props.window.match.params.section}/${value}.md?token=${Math.random().toString(32).slice(2)}`)
+		axios(`/public/${this.props.window.match.params.section}/${value.id}.md?token=${Math.random().toString(32).slice(2)}`)
 			.then(response => response.data)
 			.then(body => {
 				this.setState({
@@ -41,14 +41,21 @@ export default class Article extends React.Component {
 	}
 
 	render() {
-		if (!this.props[window.location.pathname]) return <NotFound />;
-		let body = this.state.data ? <Markdown source={this.state.data} className='article'/> : null;
+		let metadata = this.props[window.location.pathname];
+		if (!metadata) return <NotFound />;
+		let body = this.state.data.trim();
+		if (body.endsWith('.')) body = body + ' ∎';
+		let formatted = body ? <Markdown source={body} /> : null;
 		return (
 			<div className="container">
 				<Title />
 				<Navigation />
 				<div className='feed'>
-					{body}
+					<div className='article'>
+						<h2>{<Markdown source={metadata.name} />}</h2>
+						<h3>{metadata.dateCreated}</h3>
+						{formatted}
+					</div>
 				</div>
 				<Signature />
 				<Social />

@@ -1,75 +1,34 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import axios from 'axios';
-
-import {italicise} from '../const/util';
+import Markdown from 'react-markdown';
 
 import '../assets/styles/Articles.css';
-const regex = /(?:\w|\s)+/g;
 
 export default class Articles extends React.Component {
 
-	constructor(props) {
-		super(props);
-		this.state = {
-			keys: {},
-			articles: {},
-			paths: []
-		}
-	}
-
-	static get() {
-		return axios('/public/index.json')
-			.then(response => response.data)
-			.then(body => {
-				let keys = body.keys;
-				let articles = {};
-				let paths = [];
-				Object.entries(body.articles).map(([k, v]) => {
-					articles[k] = [];
-					v.forEach(({id, name, dateCreated}) => {
-						let date = new Date(dateCreated);
-						if (isNaN(date.getTime())) return;
-						let href = `/articles/${k}/${date.getFullYear()}/${date.getMonth()}/${date.getDay()}/${name.toLowerCase().match(regex).join('').split(' ').join('-')}`;
-						let data = {id, name, dateCreated, date, href};
-						paths.push(data);
-						articles[k].push(data);
-					});
-					return articles;
-				})
-				return {keys, articles, paths}
-			})
-			.catch(console.error);
-	}
-
-	componentDidMount() {
-		Articles.get().then((data) => {
-			this.setState(data);
-		});
-	}
-
 	render() {
+		let obj = {}
+		Object.entries(this.props).forEach(([k, {id, name, href, section, dateCreated}]) => {
+			if (k === 'window') return null;
+			if (!obj[section]) obj[section] = [];
+			let date = new Date(dateCreated);
+			if (isNaN(date.getTime())) return null;
+			obj[section].push(
+				<li key={id}>
+					<Link to={href}>
+						<h3>{<Markdown source={name} />}</h3>
+						<h4>{dateCreated}</h4>
+					</Link>
+				</li>
+			)
+		});
 		return (
 			<div className='feed articles'>
-				{Object.entries(this.state.keys).map(([k, section]) => {
-					let v = this.state.articles[k] || [];
+				{Object.entries(obj).map(([k, v]) => {
 					return (
 						<div key={k} id={k}>
-							<h1>{section}</h1>
-							<ul>
-							{v.map(({id, name, dateCreated, href}) => {
-								let date = new Date(dateCreated);
-								if (isNaN(date.getTime())) return null;
-								return (
-									<li key={id}>
-										<Link to={href}>
-											<h3>{italicise(name)}</h3>
-											<h4>{dateCreated}</h4>
-										</Link>
-									</li>
-								)
-							})}
-							</ul>
+							<h1>{k}</h1>
+							<ul>{v}</ul>
 						</div>
 					)
 				})}
