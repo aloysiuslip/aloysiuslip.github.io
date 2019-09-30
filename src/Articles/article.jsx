@@ -21,7 +21,7 @@ export default class Article extends React.Component {
 	getArticle() {
 		let value = this.props[window.location.pathname];
 		if (!value) return;
-		axios(`/public/${this.props.window.match.params.section}/${value}.md`)
+		axios(`/public/${this.props.window.match.params.section}/${value}.md?token=${Math.random().toString(32).slice(2)}`)
 			.then(response => response.data)
 			.then(body => {
 				this.setState({
