@@ -26,7 +26,7 @@ export default class App extends React.Component {
 	
 	static async getArticles() {
 		try {
-			let {data} = await axios('/public/index.json');
+			let {data} = await axios('/articles.json');
 			let articles = {};
 			Object.entries(data.articles).map(([sectionKey, v]) => {
 				v.forEach((metadata) => {

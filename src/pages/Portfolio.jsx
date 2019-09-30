@@ -1,16 +1,32 @@
 import React from 'react';
+import axios from 'axios';
+
 import Title from '../common/title';
 import Navigation from '../common/navigation';
 import Signature from '../common/signature';
 import Social from '../common/social';
-
 import Post from '../Portfolio';
-
-import config from '../assets/Portfolio.config.json';
 
 export default class Portfolio extends React.Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			posts: []
+		}
+	}
+
+	async componentDidMount() {
+		try {
+			let {data} = await axios.get('/portfolio.json?token=' + Math.random().toString(32).slice(2));
+			this.setState({posts: data});
+		} catch (e) {
+			console.error(e);
+		}
+	}
+
 	render() {
+		console.log(this.state.posts);
 		return (
 			<div className="container">
 				<Title />
@@ -21,7 +37,7 @@ export default class Portfolio extends React.Component {
 					</h3>
 				</div>
 				<div className="feed">
-					{config.map(p => {
+					{this.state.posts.map(p => {
 						return (
 							<Post
 								key={p.id}
