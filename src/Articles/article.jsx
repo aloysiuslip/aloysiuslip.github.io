@@ -30,9 +30,12 @@ export default class Article extends React.Component {
 		let constructor = this;
 		axios.get(url)
 			.then(response => response.data)
-			.then(body => constructor.setState({
-				data: body
-			}))
+			.then(body => {
+				constructor.setState({
+					data: body
+				});
+				this.forceUpdate();
+			})
 	}
 
 	render() {

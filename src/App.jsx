@@ -52,6 +52,7 @@ export default class App extends React.Component {
 			this.setState({
 				articles: data
 			});
+			this.forceUpdate();
 		});
 	}
 
