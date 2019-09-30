@@ -2,3 +2,7 @@ div.feed.articles, div.feed > div.article {
 	align-items: flex-start;
 	text-align: left;
 }
+
+div.feed div.article {
+	width: 100%;
+}

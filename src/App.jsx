@@ -26,21 +26,21 @@ export default class App extends React.Component {
 	
 	static async getArticles() {
 		try {
-			let {body} = axios('/public/index.json')
+			let {data} = await axios('/public/index.json');
 			let articles = {};
-			Object.entries(body.articles).map(([sectionKey, v]) => {
-				v.forEach((data) => {
-					let {name, dateCreated} = data;
+			Object.entries(data.articles).map(([sectionKey, v]) => {
+				v.forEach((metadata) => {
+					let {name, dateCreated} = metadata;
 					let date = new Date(dateCreated);
 					if (isNaN(date.getTime())) return;
 					let year = date.getFullYear();
 					let month = date.getMonth();
 					let day = date.getDay();
 					let urlEncoded = name.toLowerCase().match(regex).join('').split(' ').join('-');
-					let section = body.keys[sectionKey];
+					let section = data.keys[sectionKey];
 					let href = `/articles/${sectionKey}/${year}/${month}/${day}/${urlEncoded}`;
 					let key = process.env.PUBLIC_URL + href;
-					articles[key] = Object.assign(data, {
+					articles[key] = Object.assign(metadata, {
 						year, month, day, href, section, sectionKey
 					});
 				});
