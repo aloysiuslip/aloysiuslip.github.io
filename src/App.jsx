@@ -25,7 +25,7 @@ export default class App extends React.Component {
 	}
 	
 	static getArticles() {
-		return axios('/site-backend/public/index.json')
+		return axios('/public/index.json')
 			.then(response => response.data)
 			.then(body => {
 				let articles = {};
@@ -49,7 +49,6 @@ export default class App extends React.Component {
 			this.setState({
 				articles: data
 			});
-			this.forceUpdate();
 		});
 	}
 

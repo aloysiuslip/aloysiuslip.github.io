@@ -51,7 +51,6 @@ export default class Articles extends React.Component {
 	componentDidMount() {
 		Articles.get().then((data) => {
 			this.setState(data);
-			this.forceUpdate();
 		});
 	}
 
