@@ -12,7 +12,7 @@ export function buildImage(gallery, i, id) {
 		style: Object.assign({}, gallery, {
 			type: undefined,
 			path: undefined
-		}),
+		}, window.innerWidth < 480 ? {minWidth: '100%'} : null),
 		index: 0
 	}
 }

@@ -41,14 +41,8 @@ a {
 	margin: 0 auto;
 }
 
-.title {	
-	width: 39.1vw;
-}
-
 .intro {
-	width: 61.8vw;
 	text-align: justify;
-	margin: auto;
 }
 
 .navigation > a {
@@ -87,9 +81,14 @@ a {
 
 /*Feed pages*/
 
-.feed {
+div.feed {
 	width: 61.8vw;
-	max-width: 61.8vw;
+}
+
+@media only screen and (max-width: 480px) {
+	div.feed {
+		width: 90vw;
+	}
 }
 
 .stager {

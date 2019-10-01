@@ -11,33 +11,23 @@ export default class Dynamic extends React.Component {
 		let props = Object.assign({}, this.props, {
 			key: this.props.id + '.' + this.state + '.ImageBox'
 		});
-		let element = !isEven(this.props.i) ? [
+		let element = !isEven(this.props.i) && window.innerWidth > 480 ? [
 			<ImageBox
 				{...props}
-				style={Object.assign({}, props.style, {
-					gridColumn: '1 / span 1'
-				})}
+				style={Object.assign({}, props.style)}
 			/>,
 			<TextBox
 				key={this.props.id + '.' + this.props.i + '.TextBox'}
 				{...this.props}
-				style={{
-					gridColumn: '2 / span 2'
-				}}
 			/>
 		] : [
 			<TextBox
 				key={this.props.id + '.' + this.props.i + '.TextBox'}
 				{...this.props}
-				style={{
-					gridColumn: '1 / span 2'
-				}}
 			/>,
 			<ImageBox
 				{...props}
-				style={Object.assign({}, props.style, {
-					gridColumn: '3 / span 1'
-				})}
+				style={Object.assign({}, props.style)}
 			/>
 		];
 		return (

@@ -1,8 +1,12 @@
 div.feed.articles, div.feed > div.article {
 	align-items: flex-start;
-	text-align: left;
+	text-align: justify;
 }
 
 div.feed div.article {
 	width: 100%;
+}
+
+div.feed div.article h2 {
+	text-align: left;
 }

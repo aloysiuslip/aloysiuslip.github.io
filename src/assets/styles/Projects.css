@@ -1,24 +1,36 @@
-.feed div.post.projects-text {
+div.feed div.post.projects-text {
 	padding: 0;
 	margin: 0;
 	white-space: pre-wrap;
-	display: grid;
+	display: flex;
 	grid-template-columns: 38.2% auto 38.2%;
 	width: 100%;
-	min-width: 600px;
 }
 
 .imageBox {
-	width: 100%;
+	width: 38.2%;
 }
 
 .textBox {
 	display: flex;
 	flex-direction: column;
-	width: 100%;
+	width: 61.8%;
+	min-width: 0;
 	align-items: center;
 	justify-content: center;
 	color: white;
+	overflow-wrap: break-word;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: 480px) {
+	div.feed div.post.projects-text {
+		flex-direction: column
+	}
+	div.imageBox, div.textBox {
+		width: 100%;
+		min-height: 200px;
+	}
 }
 
 .textBox span.bold {

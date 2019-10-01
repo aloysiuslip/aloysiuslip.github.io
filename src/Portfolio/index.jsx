@@ -30,7 +30,7 @@ export default class Dynamic extends React.Component {
 				columns={3}
 				targetRowHeight={gallery.height || 200}
 				style={{
-					maxWidth: gallery.maxWidth !== undefined ? gallery.maxWidth : '800px'
+					maxWidth: window.innerWidth < 480 ? '100%' : gallery.maxWidth !== undefined ? gallery.maxWidth : '800px'
 				}}
 			/>
 		);
@@ -49,7 +49,7 @@ export default class Dynamic extends React.Component {
 				emulateTouch={true}
 				axis={gallery.axis || 'horizontal'}
 				autoPlay={gallery.autoPlay !== false}
-				width={gallery.width || '100%'}
+				width={document.innerWidth > 480 && gallery.width ? gallery.width : '100%'}
 				selectedItem={gallery.selectedItem || 0}
 				showThumbs={gallery.showThumbs !== false}
 				interval={gallery.interval || 4000}
@@ -58,7 +58,7 @@ export default class Dynamic extends React.Component {
 				dynamicHeight={gallery.dynamicHeight || false}
 				photos={data}
 				style={{
-					maxWidth: Math.min(parseInt(gallery.maxWidth !== undefined ? gallery.maxWidth : '1200px'), 0.7 * window.innerWidth)
+					maxWidth: window.innerWidth < 480 ? '100%' : Math.min(parseInt(gallery.maxWidth !== undefined ? gallery.maxWidth : '1200px'), 0.7 * window.innerWidth)
 				}}
 			>
 				{data.map(props => {
