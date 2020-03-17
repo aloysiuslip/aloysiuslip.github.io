@@ -5,6 +5,13 @@ object-assign
 */
 
 /*!
+ * The buffer module from node.js, for the browser.
+ *
+ * @author   Feross Aboukhadijeh <http://feross.org>
+ * @license  MIT
+ */
+
+/*!
  * repeat-string <https://github.com/jonschlinkert/repeat-string>
  *
  * Copyright (c) 2014-2015, Jon Schlinkert.
@@ -38,6 +45,15 @@ object-assign
  * LICENSE file in the root directory of this source tree.
  */
 
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+
+/*! https://mths.be/utf8js v2.1.2 by @mathias */
+
 /*! https://mths.be/punycode v1.4.1 by @mathias */
 
 /** @license React v16.9.0
@@ -47,13 +63,6 @@ object-assign
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
- */
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
  */
 
 /*!
